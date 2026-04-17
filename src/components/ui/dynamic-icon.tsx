@@ -3,7 +3,9 @@ import {
   FolderOpen, Plug, ShieldCheck, Bell, BarChart3, FileSearch, Boxes, Calculator,
   Landmark, SlidersHorizontal, RefreshCw, FileText, GitBranch, Sparkles, Target,
   Award, Briefcase, GraduationCap, Medal, Heart, Gift, Wallet, Receipt, Factory,
-  Radio, ShoppingBag, Stethoscope, Zap, Building2, type LucideIcon,
+  Radio, ShoppingBag, Stethoscope, Zap, Building2, Wrench, LifeBuoy, LineChart,
+  Scale, MessageCircle, ClipboardList, KanbanSquare, Languages, Moon,
+  FileCheck2, FileSpreadsheet, type LucideIcon,
 } from "lucide-react";
 
 const iconRegistry: Record<string, LucideIcon> = {
@@ -11,7 +13,9 @@ const iconRegistry: Record<string, LucideIcon> = {
   FolderOpen, Plug, ShieldCheck, Bell, BarChart3, FileSearch, Boxes, Calculator,
   Landmark, SlidersHorizontal, RefreshCw, FileText, GitBranch, Sparkles, Target,
   Award, Briefcase, GraduationCap, Medal, Heart, Gift, Wallet, Receipt, Factory,
-  Radio, ShoppingBag, Stethoscope, Zap, Building2,
+  Radio, ShoppingBag, Stethoscope, Zap, Building2, Wrench, LifeBuoy, LineChart,
+  Scale, MessageCircle, ClipboardList, KanbanSquare, Languages, Moon,
+  FileCheck2, FileSpreadsheet,
 };
 
 export function DynamicIcon({

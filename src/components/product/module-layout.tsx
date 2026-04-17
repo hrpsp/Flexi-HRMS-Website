@@ -59,6 +59,29 @@ export function ModuleLayout({ mod }: { mod: ModuleDetail }) {
         </div>
       </section>
 
+      {/* The Reality */}
+      <section className="relative">
+        <div className="container pt-4 pb-14 lg:pt-8 lg:pb-20">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-eyebrow uppercase text-brand-peach font-semibold">The Reality</span>
+              <span className="h-px flex-1 bg-gradient-to-r from-brand-peach/60 to-transparent" />
+            </div>
+            <figure className="relative border-l-4 border-brand-peach pl-6 md:pl-8 py-2">
+              <span
+                aria-hidden
+                className="absolute -left-[14px] -top-1 h-6 w-6 rounded-full bg-brand-peach text-brand-dark text-xl font-semibold leading-none flex items-center justify-center"
+              >
+                &ldquo;
+              </span>
+              <blockquote className="text-lg md:text-xl text-brand-ink/90 leading-relaxed text-pretty font-medium">
+                {mod.reality}
+              </blockquote>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       {/* Capabilities */}
       <Section id="capabilities" tone="light">
         <SectionHeading

@@ -25,8 +25,10 @@ export function ScaleBar() {
             </div>
           ))}
         </div>
-        <div className="mt-10 pt-8 border-t border-white/10 text-center text-xs uppercase tracking-[0.18em] text-white/60">
-          Flexi HRMS runs HR and payroll for Pakistan&apos;s leading enterprises.
+        <div className="mt-10 pt-8 border-t border-white/10 text-center text-sm md:text-base text-white/85 text-pretty max-w-3xl mx-auto">
+          <span className="font-semibold text-white">28 modules across five suites.</span>{" "}
+          <span className="font-semibold text-brand-peach">200+ Pakistani HR workflows.</span>{" "}
+          <span className="text-white/70">One platform built for the reality.</span>
         </div>
       </div>
     </section>

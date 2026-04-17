@@ -48,6 +48,7 @@ export type ModuleDetail = {
   suite: Suite;
   tagline: string;
   description: string;
+  reality: string;
   heroBody: string;
   capabilities: ModuleCapability[];
   workflow: ModuleWorkflowStep[];

@@ -10,33 +10,36 @@ const tabs = [
     key: "manufacturing",
     label: "Manufacturing",
     fields: [
-      { label: "Reporting plant", value: "Faisalabad — Unit 2" },
-      { label: "Shift type", value: "Rotating — A/B/C" },
-      { label: "Union membership", value: "CBA recognised" },
-      { label: "PPE size", value: "L · Helmet 58cm" },
-      { label: "Department", value: "Weaving — Line 4" },
+      { label: "Plant code", value: "FSD-02 · Faisalabad Unit 2" },
+      { label: "Shift type", value: "GA / E1 / E2 / E3 / GB" },
+      { label: "PPE size", value: "L — S to XXXL range" },
+      { label: "Union membership", value: "CBA 2023 recognised" },
+      { label: "EOBI registration", value: "42-03-6-A-1-18472" },
+      { label: "Contract / permanent", value: "Permanent · Grade 6" },
+      { label: "Piece-rate category", value: "Stitching Cat-B · PKR 12/unit" },
     ],
   },
   {
     key: "telecom",
     label: "Telecom",
     fields: [
+      { label: "Circle", value: "North" },
       { label: "Tower region", value: "North — Region 3" },
-      { label: "SIM allocation", value: "Data + Voice, Postpaid" },
+      { label: "SIM allocation card", value: "SIM-EPH-18472 · Postpaid" },
       { label: "Security clearance", value: "Level 2 — Approved" },
-      { label: "Deployment", value: "Field engineer" },
-      { label: "Vehicle access", value: "Company pool car" },
+      { label: "Field / office flag", value: "Field engineer" },
+      { label: "Emergency response team", value: "ERT-N3 · Lead" },
     ],
   },
   {
     key: "retail",
     label: "Retail",
     fields: [
-      { label: "Store code", value: "LHR-212 · Gulberg" },
-      { label: "Shift pattern", value: "Split — 10–2, 5–10" },
-      { label: "Product category", value: "Women's footwear" },
-      { label: "Reporting area", value: "Central Punjab" },
-      { label: "Commission band", value: "Tier B" },
+      { label: "Store code", value: "LHR-212 · Gulberg Galleria" },
+      { label: "Format", value: "Mall — High-street — Outlet" },
+      { label: "Shift pattern", value: "2-shift · 10–2, 5–10" },
+      { label: "POS operator flag", value: "Yes · POS #14 certified" },
+      { label: "Cash handling authorisation", value: "Tier A · up to PKR 250,000" },
     ],
   },
 ];
@@ -53,9 +56,9 @@ export function FlexiMetaStory() {
       />
       <div className="relative">
         <SectionHeading
-          eyebrow="The configurability moat"
-          title="Most HRMS products force your company to adapt. Flexi adapts to your company."
-          description="Every competitor uses words like 'flexible' or 'customisable' or 'smart flow.' Flexi Meta demonstrates it. Your HR admin reconfigures forms, workflows, and payroll rules per tenant — without a developer, without a ticket, without a release cycle."
+          eyebrow="The Reality Engine"
+          title="The Reality Engine. Your HR admin configures the product. No developer required."
+          description="Most HRMS products make you adapt your process to their software. Pakistani enterprises tried that for 15 years. It failed. Flexi inverts the model: every tenant configures their own forms, workflows, approval chains, payroll rules, and leave policies — without writing code. We call it Flexi Meta."
         />
 
         <div className="mt-12 rounded-2xl border border-border bg-card shadow-sm overflow-hidden">
@@ -86,7 +89,7 @@ export function FlexiMetaStory() {
           <div className="grid md:grid-cols-2 gap-0">
             <div className="p-6 md:p-8 border-b md:border-b-0 md:border-r border-border bg-brand-dark text-white">
               <div className="text-[10px] uppercase tracking-[0.18em] text-brand-peach mb-4">
-                Flexi Meta · dictionary
+                SystemFlex · Flexi Meta dictionary
               </div>
               <AnimatePresence mode="wait">
                 <motion.ul
@@ -147,10 +150,37 @@ export function FlexiMetaStory() {
           </div>
         </div>
 
-        <p className="mt-8 text-center text-brand-gray max-w-3xl mx-auto">
-          This is Flexi Meta. Your HR admin configures it. No developer required. Every tenant runs on their own Flexi HQ — their own forms, workflows, and rules.
+        <p className="mt-8 text-center text-brand-gray max-w-3xl mx-auto leading-relaxed">
+          This is Flexi Meta.{" "}
+          <HoverTerm
+            term="SystemFlex"
+            explain="The FormBuilder + WorkflowDesigner + PrintManager engine. The actual configurability runtime — what runs when your HR admin drops a field on a form."
+          />{" "}
+          is the engine.{" "}
+          <HoverTerm
+            term="Flexi HQ"
+            explain="Org structure, entities, business units, cost centres, reporting lines. The blueprint SystemFlex configures against."
+          />{" "}
+          is the blueprint. Your HR admin owns the configuration. No developer involvement. No implementation partner required for changes.
         </p>
       </div>
     </Section>
+  );
+}
+
+function HoverTerm({ term, explain }: { term: string; explain: string }) {
+  return (
+    <span className="relative inline-block group">
+      <span className="text-brand-dark font-semibold underline decoration-brand-peach decoration-2 underline-offset-4 cursor-help">
+        {term}
+      </span>
+      <span
+        role="tooltip"
+        className="invisible opacity-0 group-hover:visible group-hover:opacity-100 focus-within:visible focus-within:opacity-100 absolute left-1/2 top-full z-20 mt-2 w-64 -translate-x-1/2 rounded-lg bg-brand-dark text-white text-xs leading-relaxed px-3.5 py-2.5 shadow-xl transition-opacity duration-150 text-left normal-case tracking-normal font-normal"
+      >
+        <span className="absolute left-1/2 -top-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-brand-dark" />
+        {explain}
+      </span>
+    </span>
   );
 }

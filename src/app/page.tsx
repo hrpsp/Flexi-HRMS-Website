@@ -1,4 +1,5 @@
 import { Hero } from "@/components/home/hero";
+import { TheReality } from "@/components/home/the-reality";
 import { ScaleBar } from "@/components/home/scale-bar";
 import { ClientWall } from "@/components/home/client-wall";
 import { FlexiMetaStory } from "@/components/home/flexi-meta-story";
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <TheReality />
       <ScaleBar />
       <ClientWall />
       <FlexiMetaStory />

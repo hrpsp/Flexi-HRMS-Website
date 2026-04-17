@@ -7,6 +7,8 @@ export const payedge: ModuleDetail = {
   tagline: "Payroll with Pakistan tax engine",
   description:
     "PayEdge runs monthly payroll for Pakistani enterprises with a tax engine that knows WHT slabs, EOBI and PESSI rates, provincial labour law, and every variation the federal budget throws at it.",
+  reality:
+    "Monthly salary for 200 office staff. Piece-rate wages for 1,800 stitchers. TOR rates for 120 contractors. Provident fund, EOBI, WHT, advance adjustments, bonus, loan EMIs, mid-month hires, and a maker-checker who returns the run on the 27th because one grade's allowance was wrong. PayEdge runs all of it in one cycle — and exports the WPS bank file your bank actually accepts.",
   heroBody:
     "Payroll for Pakistan should not require a consultant every June. PayEdge updates for every customer when the federal budget changes — before your next pay cycle. WPS bank files export in the format your bank actually accepts.",
   capabilities: [
