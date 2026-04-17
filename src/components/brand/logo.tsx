@@ -3,12 +3,16 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 /**
- * Real Flexi HRMS logo. Native asset is 1600×933 transparent PNG —
- * we pass those dimensions to next/image for aspect-ratio correctness
- * and control display size via the `className` prop (height + w-auto).
+ * Flexi HRMS logo. Native asset is 1600×933 — we pass those dimensions
+ * to next/image for aspect-ratio correctness and control display size
+ * via the `className` prop (height + w-auto).
+ *
+ * Variants:
+ *   - "dark"  — brand-dark (#322E53) fill SVG, for light backgrounds (nav)
+ *   - "light" — light-coloured PNG, for dark backgrounds (footer)
  *
  * Defaults:
- *   - className `h-8 w-auto` → renders ~32px tall (nav-appropriate)
+ *   - className "h-8 w-auto" → renders ~32px tall (nav-appropriate)
  *
  * For larger display (footer / hero), pass `className="h-10 w-auto"`.
  */
@@ -24,7 +28,7 @@ export function Logo({
   const src =
     variant === "light"
       ? "/brand/flexi-hrms-logo-light.png"
-      : "/brand/flexi-hrms-logo.png";
+      : "/brand/flexi-hrms-logo.svg";
 
   return (
     <Link href="/" className="inline-flex items-center" aria-label="Flexi HRMS home">
