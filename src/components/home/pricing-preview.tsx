@@ -70,10 +70,10 @@ export function PricingPreview() {
                 Most adopted
               </span>
             )}
-            <div className={cn("text-lg font-semibold", t.featured ? "text-white" : "text-brand-ink")}>
+            <div className={cn("text-lg font-semibold", t.featured ? "text-white" : "text-neutral-text")}>
               {t.name}
             </div>
-            <p className={cn("text-sm mt-1.5", t.featured ? "text-white/70" : "text-brand-gray")}>
+            <p className={cn("text-sm mt-1.5", t.featured ? "text-white/70" : "text-neutral-gray")}>
               {t.audience}
             </p>
 
@@ -81,7 +81,7 @@ export function PricingPreview() {
               <div className={cn("text-3xl font-bold", t.featured ? "text-brand-peach" : "text-brand-dark")}>
                 {t.priceLabel}
               </div>
-              <div className={cn("text-xs mt-1", t.featured ? "text-white/60" : "text-brand-gray")}>
+              <div className={cn("text-xs mt-1", t.featured ? "text-white/60" : "text-neutral-gray")}>
                 {t.priceSuffix}
               </div>
             </div>
@@ -92,13 +92,13 @@ export function PricingPreview() {
                   key={h}
                   className={cn(
                     "flex items-start gap-2 text-sm",
-                    t.featured ? "text-white/90" : "text-brand-ink/90"
+                    t.featured ? "text-white/90" : "text-neutral-text/90"
                   )}
                 >
                   <Check
                     className={cn(
                       "h-4 w-4 mt-0.5 shrink-0",
-                      t.featured ? "text-brand-peach" : "text-brand-success"
+                      t.featured ? "text-brand-peach" : "text-success"
                     )}
                   />
                   <span>{h}</span>

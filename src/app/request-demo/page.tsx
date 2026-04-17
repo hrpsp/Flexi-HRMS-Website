@@ -47,10 +47,10 @@ export default function RequestDemoPage() {
               <span className="inline-flex items-center gap-2 rounded-full border border-brand-mid/20 bg-white/70 backdrop-blur px-3 py-1 text-eyebrow uppercase text-brand-mid">
                 Request a demo
               </span>
-              <h1 className="text-display-xl text-balance text-brand-ink">
+              <h1 className="text-display-xl text-balance text-neutral-text">
                 Book a 30-minute demo. See Flexi HRMS configured for your industry.
               </h1>
-              <p className="text-lg text-brand-gray text-pretty">
+              <p className="text-lg text-neutral-gray text-pretty">
                 A product specialist will walk through Flexi HQ + Flexi Meta for your industry — with live payroll, compliance, and mobile scenarios. We&apos;ll follow up with a written recap and a clear next step.
               </p>
 
@@ -60,14 +60,14 @@ export default function RequestDemoPage() {
                     <div className="h-8 w-8 rounded-md bg-brand-peach/25 flex items-center justify-center mb-3">
                       <e.icon className="h-4 w-4 text-brand-dark" />
                     </div>
-                    <div className="text-sm font-semibold text-brand-ink">{e.title}</div>
-                    <p className="mt-1 text-xs text-brand-gray line-clamp-3">{e.body}</p>
+                    <div className="text-sm font-semibold text-neutral-text">{e.title}</div>
+                    <p className="mt-1 text-xs text-neutral-gray line-clamp-3">{e.body}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="pt-4 border-t border-border mt-6 text-sm text-brand-gray">
-                <div className="font-medium text-brand-ink mb-1">Prefer to call?</div>
+              <div className="pt-4 border-t border-border mt-6 text-sm text-neutral-gray">
+                <div className="font-medium text-neutral-text mb-1">Prefer to call?</div>
                 <div className="flex flex-wrap gap-x-4 gap-y-1">
                   {siteConfig.company.phones.map((p) => (
                     <a key={p} href={`tel:${p.replace(/-/g, "")}`} className="hover:text-brand-dark">

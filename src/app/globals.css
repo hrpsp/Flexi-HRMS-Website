@@ -21,7 +21,7 @@
     --secondary-foreground: 0 0% 100%;
 
     --muted: 36 27% 96%;
-    --muted-foreground: 248 10% 46%; /* #6B6880 brand-gray */
+    --muted-foreground: 248 10% 46%; /* #6B6880 neutral-gray */
 
     --accent: 29 72% 76%;            /* #EEC293 peach */
     --accent-foreground: 247 30% 25%;
@@ -73,6 +73,23 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading tracking-tight;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Accessibility: honour reduced-motion preferences globally.
+     Decorative animations become effectively instant; functional
+     state changes (focus rings, form validation) are preserved by
+     keeping a tiny non-zero duration. */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 

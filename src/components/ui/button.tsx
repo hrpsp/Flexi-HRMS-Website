@@ -5,16 +5,20 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-[background-color,box-shadow,transform,border-color,color] duration-fast ease-flexi-snap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-peach focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98] [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-border bg-transparent hover:bg-muted hover:text-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/90",
-        ghost: "hover:bg-muted hover:text-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+        default:
+          "bg-brand-peach text-brand-dark hover:bg-brand-salmon hover:shadow-[0_4px_12px_rgba(238,194,147,0.3)] active:shadow-[0_2px_6px_rgba(238,194,147,0.25)]",
+        secondary:
+          "border border-brand-mid/40 text-brand-dark bg-transparent hover:bg-brand-peach/10 hover:border-brand-peach",
+        outline:
+          "border border-neutral-gray/30 text-brand-dark bg-transparent hover:bg-neutral-light hover:border-brand-mid/40",
+        ghost: "text-brand-dark hover:bg-neutral-light",
+        link: "text-brand-dark underline-offset-4 hover:underline",
+        destructive:
+          "bg-error/10 text-error border border-error/30 hover:bg-error/15",
       },
       size: {
         default: "h-10 px-4 py-2",

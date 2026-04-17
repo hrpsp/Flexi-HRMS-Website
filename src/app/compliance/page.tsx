@@ -141,10 +141,10 @@ export default function CompliancePage() {
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-mid/20 bg-white/70 backdrop-blur px-3 py-1 text-eyebrow uppercase text-brand-mid">
               Pakistan compliance
             </span>
-            <h1 className="text-display-xl text-balance text-brand-ink">
+            <h1 className="text-display-xl text-balance text-neutral-text">
               The Pakistan compliance detail most HRMS vendors handwave.
             </h1>
-            <p className="text-lg text-brand-gray text-pretty">
+            <p className="text-lg text-neutral-gray text-pretty">
               Every Pakistani HRMS claims compliance. This page is where that claim gets concrete — WHT with monthly averaging, EOBI with CNIC validation, PESSI at the employee&apos;s workplace province, WPS file formats per partner bank, FBR payslip content preserved under branding, and provincial labour law variants that actually vary.
             </p>
             <div className="flex flex-wrap items-center gap-2 pt-2">
@@ -179,24 +179,24 @@ export default function CompliancePage() {
                   <a.icon className="h-5 w-5 text-brand-dark" />
                 </div>
                 <div className="text-eyebrow uppercase text-brand-mid">{a.eyebrow}</div>
-                <h2 className="text-display-md text-brand-ink text-balance">{a.title}</h2>
-                <p className="text-sm text-brand-gray text-pretty">{a.summary}</p>
+                <h2 className="text-display-md text-neutral-text text-balance">{a.title}</h2>
+                <p className="text-sm text-neutral-gray text-pretty">{a.summary}</p>
               </div>
               <div className="lg:col-span-8">
                 <div className="rounded-2xl border border-border bg-card p-6 md:p-7">
                   <div className="text-eyebrow uppercase text-brand-mid mb-3">How Flexi handles it</div>
                   <ul className="space-y-2.5">
                     {a.howFlexiHandles.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-brand-ink/90">
+                      <li key={item} className="flex items-start gap-2.5 text-sm text-neutral-text/90">
                         <span className="mt-1 h-1.5 w-1.5 rounded-full bg-brand-peach shrink-0" />
                         <span className="text-pretty">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="mt-4 rounded-xl border-l-4 border-brand-warning bg-brand-warning/5 px-5 py-4">
-                  <div className="text-xs uppercase tracking-wider text-brand-warning mb-1">Where most HRMS products break</div>
-                  <p className="text-sm text-brand-ink/90 text-pretty">{a.pain}</p>
+                <div className="mt-4 rounded-xl border-l-4 border-warning bg-warning/5 px-5 py-4">
+                  <div className="text-xs uppercase tracking-wider text-warning mb-1">Where most HRMS products break</div>
+                  <p className="text-sm text-neutral-text/90 text-pretty">{a.pain}</p>
                 </div>
               </div>
             </div>
@@ -213,7 +213,7 @@ export default function CompliancePage() {
             We&apos;ll walk through a live payroll run with WHT, EOBI, PESSI, and WPS — for your industry, at your headcount.
           </p>
           <div className="mt-8">
-            <Button asChild size="lg" className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-7">
+            <Button asChild size="lg" className="h-12 px-7">
               <Link href="/request-demo">
                 Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
               </Link>

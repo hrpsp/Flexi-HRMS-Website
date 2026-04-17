@@ -25,10 +25,10 @@ export default function CustomersPage() {
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-mid/20 bg-white/70 backdrop-blur px-3 py-1 text-eyebrow uppercase text-brand-mid">
               Customers
             </span>
-            <h1 className="text-display-xl text-balance text-brand-ink">
+            <h1 className="text-display-xl text-balance text-neutral-text">
               100+ Pakistani enterprises. 35,000+ employees. Fifteen years in production.
             </h1>
-            <p className="text-lg text-brand-gray text-pretty">
+            <p className="text-lg text-neutral-gray text-pretty">
               Flexi HRMS runs HR and payroll for blue-chip Pakistani enterprises across telecom, banking, manufacturing, retail, healthcare, and utilities. The companies below are a selection.
             </p>
           </div>
@@ -46,7 +46,7 @@ export default function CustomersPage() {
             <Link
               key={cs.slug}
               href={`/customers/${cs.slug}`}
-              className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all p-7 flex flex-col"
+              className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all duration-fast ease-flexi-snap p-7 flex flex-col"
             >
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
@@ -54,20 +54,20 @@ export default function CustomersPage() {
                     {cs.customer.charAt(0)}
                   </div>
                   <div>
-                    <div className="text-sm font-semibold text-brand-ink">{cs.customer}</div>
-                    <div className="text-xs text-brand-gray">{cs.industry}</div>
+                    <div className="text-sm font-semibold text-neutral-text">{cs.customer}</div>
+                    <div className="text-xs text-neutral-gray">{cs.industry}</div>
                   </div>
                 </div>
                 {!cs.isConfirmed && <TodoBadge>Pending</TodoBadge>}
               </div>
-              <p className="text-sm text-brand-gray text-pretty line-clamp-3">{cs.heroBlurb}</p>
+              <p className="text-sm text-neutral-gray text-pretty line-clamp-3">{cs.heroBlurb}</p>
               {cs.headlineStat && (
                 <div className="mt-6 pt-5 border-t border-border">
                   <div className="text-3xl font-bold text-brand-dark">{cs.headlineStat.stat}</div>
-                  <div className="text-xs uppercase tracking-wider text-brand-gray mt-1">{cs.headlineStat.label}</div>
+                  <div className="text-xs uppercase tracking-wider text-neutral-gray mt-1">{cs.headlineStat.label}</div>
                 </div>
               )}
-              <div className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand-dark group-hover:gap-1.5 transition-all">
+              <div className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand-dark group-hover:gap-1.5 transition-all duration-fast ease-flexi-snap">
                 Read case study <ArrowRight className="h-3.5 w-3.5" />
               </div>
             </Link>
@@ -87,13 +87,13 @@ export default function CustomersPage() {
           {clients.map((c) => (
             <div
               key={c.name}
-              className="group flex h-16 items-center justify-center rounded-lg border border-dashed border-brand-gray/30 bg-white/60 px-3 text-center text-[13px] font-medium text-brand-gray hover:border-brand-mid/40 hover:bg-white hover:text-brand-ink transition-all"
+              className="group flex h-16 items-center justify-center rounded-lg border border-dashed border-neutral-gray/30 bg-white/60 px-3 text-center text-[13px] font-medium text-neutral-gray hover:border-brand-mid/40 hover:bg-white hover:text-neutral-text transition-all duration-fast ease-flexi-snap"
             >
               {c.name}
             </div>
           ))}
         </div>
-        <div className="mt-10 text-center text-sm text-brand-gray">
+        <div className="mt-10 text-center text-sm text-neutral-gray">
           Plus 70 more organisations across Pakistan.
         </div>
       </Section>
@@ -104,7 +104,7 @@ export default function CustomersPage() {
             Want to be the next customer with a case study here?
           </h2>
           <div className="mt-8">
-            <Button asChild size="lg" className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-7">
+            <Button asChild size="lg" className="h-12 px-7">
               <Link href="/request-demo">
                 Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
               </Link>

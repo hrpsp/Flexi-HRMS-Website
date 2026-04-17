@@ -69,10 +69,10 @@ export default function WhyFlexiPage() {
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-mid/20 bg-white/70 backdrop-blur px-3 py-1 text-eyebrow uppercase text-brand-mid">
               Why Flexi
             </span>
-            <h1 className="text-display-xl text-balance text-brand-ink">
+            <h1 className="text-display-xl text-balance text-neutral-text">
               Six things Flexi HRMS does that other HRMS products claim but cannot deliver.
             </h1>
-            <p className="text-lg text-brand-gray text-pretty">
+            <p className="text-lg text-neutral-gray text-pretty">
               Every HRMS in this market says the same things — flexible, modern, intuitive, comprehensive. This page is what makes Flexi actually different, in concrete detail, with named proof points.
             </p>
           </div>
@@ -80,7 +80,7 @@ export default function WhyFlexiPage() {
       </section>
 
       {/* Scale bar repeated here for this page's audience */}
-      <section className="bg-brand-dark text-white">
+      <section className="bg-brand-gradient text-white">
         <div className="container py-14 md:py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6">
             {[
@@ -88,10 +88,10 @@ export default function WhyFlexiPage() {
               { value: 35000, suffix: "+", label: "Employees managed" },
               { value: 240, suffix: "+", label: "Pakistani cities" },
               { value: 15, suffix: " years", label: "In production" },
-            ].map((s) => (
+            ].map((s, i) => (
               <div key={s.label} className="text-center md:text-left">
                 <div className="text-4xl md:text-5xl font-bold tracking-tight">
-                  <CountUp value={s.value} suffix={s.suffix} />
+                  <CountUp value={s.value} suffix={s.suffix} index={i} />
                 </div>
                 <div className="mt-2 text-xs uppercase tracking-[0.14em] text-brand-peach/90">{s.label}</div>
               </div>
@@ -107,13 +107,13 @@ export default function WhyFlexiPage() {
             <div key={d.title} className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               <div className={`lg:col-span-5 ${i % 2 === 1 ? "lg:order-last" : ""}`}>
                 <div className="text-eyebrow uppercase text-brand-mid">{d.eyebrow}</div>
-                <h2 className="text-display-lg text-brand-ink mt-3 text-balance">{d.title}</h2>
+                <h2 className="text-display-lg text-neutral-text mt-3 text-balance">{d.title}</h2>
               </div>
               <div className="lg:col-span-7 space-y-5">
-                <p className="text-base text-brand-ink/90 text-pretty leading-relaxed">{d.body}</p>
+                <p className="text-base text-neutral-text/90 text-pretty leading-relaxed">{d.body}</p>
                 <div className="rounded-xl border-l-4 border-brand-peach bg-brand-peach/10 px-5 py-4">
                   <div className="text-xs uppercase tracking-wider text-brand-mid mb-1">In practice</div>
-                  <p className="text-sm text-brand-ink/90 text-pretty">{d.proof}</p>
+                  <p className="text-sm text-neutral-text/90 text-pretty">{d.proof}</p>
                 </div>
                 {d.link && (
                   <div>
@@ -122,14 +122,14 @@ export default function WhyFlexiPage() {
                         href={d.link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-sm font-medium text-brand-dark hover:gap-1.5 transition-all"
+                        className="inline-flex items-center gap-1 text-sm font-medium text-brand-dark hover:gap-1.5 transition-all duration-fast ease-flexi-snap"
                       >
                         {d.link.label} <ArrowRight className="h-3.5 w-3.5" />
                       </a>
                     ) : (
                       <Link
                         href={d.link.href}
-                        className="inline-flex items-center gap-1 text-sm font-medium text-brand-dark hover:gap-1.5 transition-all"
+                        className="inline-flex items-center gap-1 text-sm font-medium text-brand-dark hover:gap-1.5 transition-all duration-fast ease-flexi-snap"
                       >
                         {d.link.label} <ArrowRight className="h-3.5 w-3.5" />
                       </Link>
@@ -173,26 +173,26 @@ export default function WhyFlexiPage() {
             },
           ].map((c) => (
             <div key={c.label} className="rounded-2xl border border-border bg-card p-6">
-              <div className="text-base font-semibold text-brand-ink">{c.label}</div>
-              <div className="text-xs text-brand-gray">{c.sub}</div>
+              <div className="text-base font-semibold text-neutral-text">{c.label}</div>
+              <div className="text-xs text-neutral-gray">{c.sub}</div>
               <div className="mt-5 space-y-3">
                 <div>
-                  <div className="text-[11px] uppercase tracking-wider text-brand-success mb-1.5">Strengths</div>
+                  <div className="text-[11px] uppercase tracking-wider text-success mb-1.5">Strengths</div>
                   <ul className="space-y-1.5">
                     {c.strengths.map((s) => (
-                      <li key={s} className="flex items-start gap-2 text-sm text-brand-ink/90">
-                        <Check className="h-3.5 w-3.5 mt-1 shrink-0 text-brand-success" />
+                      <li key={s} className="flex items-start gap-2 text-sm text-neutral-text/90">
+                        <Check className="h-3.5 w-3.5 mt-1 shrink-0 text-success" />
                         {s}
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <div className="text-[11px] uppercase tracking-wider text-brand-warning mb-1.5">Gaps vs. Flexi</div>
+                  <div className="text-[11px] uppercase tracking-wider text-warning mb-1.5">Gaps vs. Flexi</div>
                   <ul className="space-y-1.5">
                     {c.gaps.map((g) => (
-                      <li key={g} className="flex items-start gap-2 text-sm text-brand-gray">
-                        <c.icon className="h-3.5 w-3.5 mt-1 shrink-0 text-brand-warning" />
+                      <li key={g} className="flex items-start gap-2 text-sm text-neutral-gray">
+                        <c.icon className="h-3.5 w-3.5 mt-1 shrink-0 text-warning" />
                         {g}
                       </li>
                     ))}
@@ -213,7 +213,7 @@ export default function WhyFlexiPage() {
             A 30-minute demo configured to your industry — so the moat stops being a slide and starts being a screen.
           </p>
           <div className="mt-8">
-            <Button asChild size="lg" className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-7">
+            <Button asChild size="lg" className="h-12 px-7">
               <Link href="/request-demo">
                 Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
               </Link>

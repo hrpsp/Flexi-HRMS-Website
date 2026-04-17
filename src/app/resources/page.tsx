@@ -32,10 +32,10 @@ export default function ResourcesPage() {
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-mid/20 bg-white/70 backdrop-blur px-3 py-1 text-eyebrow uppercase text-brand-mid">
               Resources
             </span>
-            <h1 className="text-display-xl text-balance text-brand-ink">
+            <h1 className="text-display-xl text-balance text-neutral-text">
               Product thinking, payroll checklists, and compliance updates.
             </h1>
-            <p className="text-lg text-brand-gray text-pretty">
+            <p className="text-lg text-neutral-gray text-pretty">
               We don&apos;t publish thought leadership for its own sake. Everything here is written because an HR, payroll, or IT leader asked us to explain something — and the answer was useful enough to write down.
             </p>
           </div>
@@ -51,14 +51,14 @@ export default function ResourcesPage() {
               <Link
                 key={k}
                 href={cat.href}
-                className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all p-7"
+                className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all duration-fast ease-flexi-snap p-7"
               >
                 <div className="h-10 w-10 rounded-lg bg-brand-peach/25 flex items-center justify-center mb-5 group-hover:bg-brand-peach/40 transition-colors">
                   <Icon className="h-5 w-5 text-brand-dark" />
                 </div>
-                <div className="text-base font-semibold text-brand-ink">{cat.label}</div>
-                <p className="mt-2 text-sm text-brand-gray text-pretty">{cat.description}</p>
-                <div className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand-dark group-hover:gap-1.5 transition-all">
+                <div className="text-base font-semibold text-neutral-text">{cat.label}</div>
+                <p className="mt-2 text-sm text-neutral-gray text-pretty">{cat.description}</p>
+                <div className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand-dark group-hover:gap-1.5 transition-all duration-fast ease-flexi-snap">
                   Browse {cat.label} <ArrowRight className="h-3.5 w-3.5" />
                 </div>
               </Link>

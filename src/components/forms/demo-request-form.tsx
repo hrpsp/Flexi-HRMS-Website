@@ -70,12 +70,12 @@ export function DemoRequestForm() {
 
   if (state === "success") {
     return (
-      <div className="rounded-2xl border border-brand-success/30 bg-brand-success/5 p-8 text-center">
-        <div className="mx-auto h-14 w-14 rounded-full bg-brand-success/20 flex items-center justify-center">
-          <CheckCircle2 className="h-7 w-7 text-brand-success" />
+      <div className="rounded-2xl border border-success/30 bg-success/5 p-8 text-center">
+        <div className="mx-auto h-14 w-14 rounded-full bg-success/20 flex items-center justify-center">
+          <CheckCircle2 className="h-7 w-7 text-success" />
         </div>
-        <h2 className="mt-5 text-xl font-semibold text-brand-ink">Request received.</h2>
-        <p className="mt-2 text-sm text-brand-gray max-w-sm mx-auto">
+        <h2 className="mt-5 text-xl font-semibold text-neutral-text">Request received.</h2>
+        <p className="mt-2 text-sm text-neutral-gray max-w-sm mx-auto">
           A Flexi specialist will reach out within one business day to schedule your demo. In the meantime, feel free to explore the product pages or review the compliance detail.
         </p>
         <div className="mt-6">
@@ -90,7 +90,7 @@ export function DemoRequestForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       {state === "error" && error && (
-        <div className="rounded-lg border border-destructive/40 bg-destructive/5 px-4 py-3 text-sm text-destructive flex items-start gap-2">
+        <div className="rounded-lg border border-error/30 bg-error/10 px-4 py-3 text-sm text-error flex items-start gap-2">
           <AlertCircle className="h-4 w-4 mt-0.5 shrink-0" />
           <span>{error}</span>
         </div>
@@ -119,12 +119,12 @@ export function DemoRequestForm() {
         placeholder="Modules you're evaluating, current HR system if any, specific pain points, timeline."
       />
 
-      <label className="flex items-start gap-2.5 text-sm text-brand-gray">
+      <label className="flex items-start gap-2.5 text-sm text-neutral-gray">
         <input
           type="checkbox"
           name="consent"
           required
-          className="mt-1 h-4 w-4 rounded border-brand-gray/40 text-brand-dark focus:ring-brand-dark focus:ring-offset-0"
+          className="mt-1 h-4 w-4 rounded border-neutral-gray/40 text-brand-dark focus:ring-brand-dark focus:ring-offset-0"
         />
         <span>
           I agree to be contacted by Flexi IT Services regarding this demo request. Read our{" "}
@@ -139,7 +139,7 @@ export function DemoRequestForm() {
         type="submit"
         size="lg"
         disabled={state === "submitting"}
-        className="w-full bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full h-12 disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {state === "submitting" ? (
           <>
@@ -173,10 +173,10 @@ function Field({
   textarea?: boolean;
 }) {
   const base =
-    "w-full rounded-lg border border-border bg-card px-3.5 py-2.5 text-sm text-brand-ink placeholder:text-brand-gray/70 focus:border-brand-dark focus:ring-2 focus:ring-brand-dark/10 focus:outline-none transition-colors";
+    "w-full rounded-lg border border-border bg-card px-3.5 py-2.5 text-sm text-neutral-text placeholder:text-neutral-gray/70 focus:border-brand-peach focus:ring-2 focus:ring-brand-peach/25 focus:outline-none transition-colors";
   return (
     <label className="block">
-      <span className={cn("block text-xs font-medium text-brand-ink mb-1.5", required && "after:content-['*'] after:text-brand-warning after:ml-0.5")}>{label}</span>
+      <span className={cn("block text-xs font-medium text-neutral-text mb-1.5", required && "after:content-['*'] after:text-warning after:ml-0.5")}>{label}</span>
       {textarea ? (
         <textarea name={name} rows={4} placeholder={placeholder} required={required} className={cn(base, "resize-y min-h-[100px]")} />
       ) : (
@@ -199,12 +199,12 @@ function SelectField({
 }) {
   return (
     <label className="block">
-      <span className={cn("block text-xs font-medium text-brand-ink mb-1.5", required && "after:content-['*'] after:text-brand-warning after:ml-0.5")}>{label}</span>
+      <span className={cn("block text-xs font-medium text-neutral-text mb-1.5", required && "after:content-['*'] after:text-warning after:ml-0.5")}>{label}</span>
       <select
         name={name}
         required={required}
         defaultValue=""
-        className="w-full rounded-lg border border-border bg-card px-3.5 py-2.5 text-sm text-brand-ink focus:border-brand-dark focus:ring-2 focus:ring-brand-dark/10 focus:outline-none"
+        className="w-full rounded-lg border border-border bg-card px-3.5 py-2.5 text-sm text-neutral-text focus:border-brand-peach focus:ring-2 focus:ring-brand-peach/25 focus:outline-none"
       >
         <option value="" disabled>Select one</option>
         {options.map((o) => (

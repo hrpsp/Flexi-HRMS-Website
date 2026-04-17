@@ -10,7 +10,7 @@ const suiteAccent: Record<Suite, string> = {
   core: "from-brand-mid/10 to-brand-dark/5 border-brand-mid/15",
   talent: "from-brand-peach/20 to-brand-salmon/10 border-brand-peach/25",
   engagement: "from-brand-salmon/20 to-brand-peach/5 border-brand-salmon/25",
-  operations: "from-brand-warning/15 to-brand-peach/5 border-brand-warning/25",
+  operations: "from-warning/15 to-brand-peach/5 border-warning/25",
   platform: "from-brand-dark/15 to-brand-mid/5 border-brand-dark/20",
 };
 
@@ -38,12 +38,12 @@ export function ModuleMatrix() {
               <div className="flex items-start justify-between gap-4 mb-5">
                 <div>
                   <div className="text-eyebrow uppercase text-brand-mid">Suite</div>
-                  <div className="text-xl font-semibold text-brand-ink mt-1 leading-tight">{suite.name}</div>
-                  <div className="text-sm text-brand-gray mt-1">{suite.promise}</div>
+                  <div className="text-xl font-semibold text-neutral-text mt-1 leading-tight">{suite.name}</div>
+                  <div className="text-sm text-neutral-gray mt-1">{suite.promise}</div>
                 </div>
                 <Link
                   href={suite.href}
-                  className="inline-flex items-center gap-1 text-sm font-medium text-brand-dark hover:gap-2 transition-all shrink-0"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-brand-dark hover:gap-2 transition-all duration-fast ease-flexi-snap shrink-0"
                 >
                   Explore <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
@@ -54,12 +54,12 @@ export function ModuleMatrix() {
                   <Link
                     key={m.slug}
                     href={`/product/${m.slug}`}
-                    className="group rounded-lg bg-white/70 hover:bg-white border border-border/60 hover:border-brand-dark/30 hover:shadow-sm transition-all px-3 py-2.5"
+                    className="group rounded-lg bg-white/70 hover:bg-white border border-border/60 hover:border-brand-dark/30 hover:shadow-sm transition-all duration-fast ease-flexi-snap px-3 py-2.5"
                   >
-                    <div className="text-sm font-medium text-brand-ink group-hover:text-brand-dark">
+                    <div className="text-sm font-medium text-neutral-text group-hover:text-brand-dark">
                       {m.name}
                     </div>
-                    <div className="text-xs text-brand-gray line-clamp-1">{m.tagline}</div>
+                    <div className="text-xs text-neutral-gray line-clamp-1">{m.tagline}</div>
                   </Link>
                 ))}
                 {mods.length > 6 && (
@@ -76,7 +76,7 @@ export function ModuleMatrix() {
         })}
       </div>
 
-      <div className="mt-12 text-center text-sm text-brand-gray">
+      <div className="mt-12 text-center text-sm text-neutral-gray">
         28 modules. Five suites. One platform. Modular adoption.
       </div>
     </Section>

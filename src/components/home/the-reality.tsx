@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import {
   Clock,
   Moon,
@@ -9,6 +12,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Section, SectionHeading, TodoBadge } from "@/components/ui/section";
+import { ease } from "@/lib/motion";
 
 type Reality = {
   icon: typeof Clock;
@@ -74,7 +78,34 @@ const realities: Reality[] = [
   },
 ];
 
+/* ---------- Motion variants ---------- */
+
+const gridVariants: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.07 } },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 40, rotate: 2 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotate: 0,
+    transition: { duration: 0.5, ease: ease.flexiBold },
+  },
+};
+
+const borderVariants: Variants = {
+  hidden: { scaleY: 0 },
+  visible: {
+    scaleY: 1,
+    transition: { duration: 0.4, ease: ease.flexiBold, delay: 0.2 },
+  },
+};
+
 export function TheReality() {
+  const reduce = useReducedMotion();
+
   return (
     <Section tone="default">
       <SectionHeading
@@ -83,17 +114,32 @@ export function TheReality() {
         description="This is what actually shows up on a Pakistani HR team's desk. Every card below is something a buyer has told us their current system handles badly, or not at all."
       />
 
-      <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <motion.div
+        className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+        variants={reduce ? undefined : gridVariants}
+        initial={reduce ? false : "hidden"}
+        whileInView={reduce ? undefined : "visible"}
+        viewport={{ amount: 0.3, once: true }}
+      >
         {realities.map((r) => (
-          <article
+          <motion.article
             key={r.title}
-            className="group rounded-2xl border border-border bg-card hover:border-brand-peach hover:shadow-md transition-all p-6 flex flex-col"
+            variants={reduce ? undefined : cardVariants}
+            className="group relative rounded-2xl bg-neutral-light hover:bg-white border border-border/60 hover:border-border transition-colors duration-fast p-6 pl-8 flex flex-col hover:-translate-y-1 motion-safe:transition-transform ease-flexi-snap will-change-transform shadow-sm hover:shadow-md overflow-hidden"
           >
-            <div className="h-10 w-10 rounded-lg bg-brand-peach/25 group-hover:bg-brand-peach/40 transition-colors flex items-center justify-center mb-5">
+            {/* Peach left-border accent — enters 200ms after card content */}
+            <motion.span
+              aria-hidden
+              variants={reduce ? undefined : borderVariants}
+              className="absolute left-0 top-0 h-full w-1 group-hover:w-1.5 bg-brand-peach origin-top transition-[width] duration-fast ease-flexi-snap"
+            />
+
+            <div className="h-10 w-10 rounded-lg bg-brand-peach/25 group-hover:bg-brand-peach/40 transition-colors duration-fast flex items-center justify-center mb-5">
               <r.icon className="h-5 w-5 text-brand-dark" />
             </div>
-            <h3 className="text-lg font-semibold text-brand-ink text-pretty">{r.title}</h3>
-            <p className="mt-2 text-sm text-brand-gray text-pretty flex-1">{r.body}</p>
+            <h3 className="text-lg font-semibold text-neutral-text text-pretty">{r.title}</h3>
+            <p className="mt-2 text-sm text-neutral-gray text-pretty flex-1">{r.body}</p>
+
             <div className="mt-5 pt-4 border-t border-border">
               <div className="text-[10px] uppercase tracking-wider text-brand-mid mb-2">
                 Flexi handles this in
@@ -103,32 +149,32 @@ export function TheReality() {
                   <span key={m.slug} className="inline-flex items-center">
                     <Link
                       href={`/product/${m.slug}`}
-                      className="inline-flex items-center gap-1 text-sm font-medium text-brand-dark hover:text-brand-mid underline underline-offset-4 decoration-brand-peach/60 hover:decoration-brand-peach"
+                      className="inline-flex items-center gap-1 text-sm font-medium text-brand-mid group-hover:text-brand-dark hover:!text-brand-dark underline underline-offset-4 decoration-brand-peach/60 group-hover:decoration-brand-peach hover:decoration-[2px] transition-all duration-fast ease-flexi-snap"
                     >
                       {m.name}
                       {i === r.modules.length - 1 && <ArrowRight className="h-3 w-3" />}
                     </Link>
                     {i < r.modules.length - 1 && (
-                      <span className="mx-1.5 text-brand-gray">+</span>
+                      <span className="mx-1.5 text-neutral-gray">+</span>
                     )}
                   </span>
                 ))}
               </div>
             </div>
-          </article>
+          </motion.article>
         ))}
-      </div>
+      </motion.div>
 
       {/* Pull-quote — TODO: secure from Bata / MEPCO / Ufone */}
       <div className="mt-16 max-w-3xl mx-auto">
         <div className="flex justify-center mb-4">
           <TodoBadge>Secure quote from Bata, MEPCO, or Ufone</TodoBadge>
         </div>
-        <blockquote className="relative rounded-2xl border-l-4 border-brand-peach bg-brand-light/50 px-8 py-7 text-center">
-          <p className="text-lg md:text-xl font-medium text-brand-ink text-balance leading-relaxed">
+        <blockquote className="relative rounded-2xl border-l-4 border-brand-peach bg-neutral-light/50 px-8 py-7 text-center">
+          <p className="text-lg md:text-xl font-medium text-neutral-text text-balance leading-relaxed">
             &ldquo;We evaluated four HRMS products. Three showed us beautiful demos. Flexi asked us what our actual month-end chaos looks like. That&apos;s why we bought Flexi.&rdquo;
           </p>
-          <footer className="mt-4 text-sm text-brand-gray italic">
+          <footer className="mt-4 text-sm text-neutral-gray italic">
             — Attribution pending (target: Bata Pakistan / MEPCO / Ufone)
           </footer>
         </blockquote>

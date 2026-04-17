@@ -69,8 +69,8 @@ export default function PrivacyPage() {
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-mid/20 bg-white/70 backdrop-blur px-3 py-1 text-eyebrow uppercase text-brand-mid">
               Legal
             </span>
-            <h1 className="text-display-lg text-balance text-brand-ink">Privacy notice</h1>
-            <p className="text-sm text-brand-gray">
+            <h1 className="text-display-lg text-balance text-neutral-text">Privacy notice</h1>
+            <p className="text-sm text-neutral-gray">
               Effective date: TODO — confirm with legal · Last updated: TODO
             </p>
             <TodoBadge>Placeholder — requires legal review before launch</TodoBadge>
@@ -82,8 +82,8 @@ export default function PrivacyPage() {
         <div className="max-w-3xl space-y-8">
           {sections.map((s) => (
             <div key={s.title}>
-              <h2 className="text-lg font-semibold text-brand-ink">{s.title}</h2>
-              <p className="mt-2 text-sm text-brand-ink/90 leading-relaxed text-pretty">{s.body}</p>
+              <h2 className="text-lg font-semibold text-neutral-text">{s.title}</h2>
+              <p className="mt-2 text-sm text-neutral-text/90 leading-relaxed text-pretty">{s.body}</p>
             </div>
           ))}
         </div>

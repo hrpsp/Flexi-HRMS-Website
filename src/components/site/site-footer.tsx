@@ -63,7 +63,10 @@ export function SiteFooter() {
                 <ul className="space-y-2.5">
                   {col.links.map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} className="text-sm text-white/70 hover:text-white transition-colors">
+                      <Link
+                        href={link.href}
+                        className="inline-block text-sm text-white/70 hover:text-white bg-gradient-to-r from-brand-peach to-brand-peach bg-no-repeat bg-[length:0%_2px] bg-left-bottom hover:bg-[length:100%_2px] transition-[background-size,color] duration-fast ease-flexi-snap pb-0.5"
+                      >
                         {link.label}
                       </Link>
                     </li>

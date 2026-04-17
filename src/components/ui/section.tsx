@@ -14,7 +14,7 @@ export function Section({
   const toneClass = {
     default: "bg-background",
     dark: "bg-brand-dark text-white",
-    light: "bg-brand-light",
+    light: "bg-neutral-light",
     peach: "bg-gradient-to-b from-brand-peach/15 to-transparent",
   }[tone];
 
@@ -53,16 +53,16 @@ export function SectionHeading({
       )}
     >
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-      <h2 className="text-display-lg text-brand-ink text-balance">{title}</h2>
-      {description && <p className="text-lg text-brand-gray text-pretty">{description}</p>}
+      <h2 className="text-display-lg text-neutral-text text-balance">{title}</h2>
+      {description && <p className="text-lg text-neutral-gray text-pretty">{description}</p>}
     </div>
   );
 }
 
 export function TodoBadge({ children = "TODO — confirm with Yousaf" }: { children?: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-warning/40 bg-brand-warning/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brand-warning">
-      <span className="h-1.5 w-1.5 rounded-full bg-brand-warning" />
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-warning/40 bg-warning/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-warning">
+      <span className="h-1.5 w-1.5 rounded-full bg-warning" />
       {children}
     </span>
   );

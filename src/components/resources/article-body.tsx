@@ -24,10 +24,10 @@ function renderInline(text: string): React.ReactNode[] {
     if (idx > lastIndex) out.push(<Fragment key={`t-${i++}`}>{text.slice(lastIndex, idx)}</Fragment>);
     const token = match[0];
     if (token.startsWith("**")) {
-      out.push(<strong key={`b-${i++}`} className="font-semibold text-brand-ink">{token.slice(2, -2)}</strong>);
+      out.push(<strong key={`b-${i++}`} className="font-semibold text-neutral-text">{token.slice(2, -2)}</strong>);
     } else if (token.startsWith("`")) {
       out.push(
-        <code key={`c-${i++}`} className="rounded bg-brand-light px-1.5 py-0.5 text-[0.9em] font-mono text-brand-dark">
+        <code key={`c-${i++}`} className="rounded bg-neutral-light px-1.5 py-0.5 text-[0.9em] font-mono text-brand-dark">
           {token.slice(1, -1)}
         </code>
       );
@@ -42,27 +42,27 @@ export function ArticleBody({ body }: { body: string }) {
   const blocks = body.trim().split(/\n{2,}/);
 
   return (
-    <div className="space-y-5 text-brand-ink/90 leading-relaxed">
+    <div className="space-y-5 text-neutral-text/90 leading-relaxed">
       {blocks.map((block, idx) => {
         const trimmed = block.trim();
 
         if (trimmed.startsWith("## ")) {
           return (
-            <h2 key={idx} className="text-2xl md:text-3xl font-semibold text-brand-ink tracking-tight pt-6">
+            <h2 key={idx} className="text-2xl md:text-3xl font-semibold text-neutral-text tracking-tight pt-6">
               {trimmed.slice(3)}
             </h2>
           );
         }
         if (trimmed.startsWith("### ")) {
           return (
-            <h3 key={idx} className="text-lg md:text-xl font-semibold text-brand-ink pt-4">
+            <h3 key={idx} className="text-lg md:text-xl font-semibold text-neutral-text pt-4">
               {trimmed.slice(4)}
             </h3>
           );
         }
         if (trimmed.startsWith("> ")) {
           return (
-            <blockquote key={idx} className="border-l-4 border-brand-peach pl-5 py-1 text-brand-ink italic text-pretty">
+            <blockquote key={idx} className="border-l-4 border-brand-peach pl-5 py-1 text-neutral-text italic text-pretty">
               {renderInline(trimmed.slice(2))}
             </blockquote>
           );

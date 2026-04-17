@@ -22,7 +22,7 @@ export default function BlogPage() {
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-mid/20 bg-white/70 backdrop-blur px-3 py-1 text-eyebrow uppercase text-brand-mid">
               Blog
             </span>
-            <h1 className="text-display-lg text-balance text-brand-ink">
+            <h1 className="text-display-lg text-balance text-neutral-text">
               Product thinking, HR market commentary, and the occasional customer story.
             </h1>
           </div>
@@ -31,7 +31,7 @@ export default function BlogPage() {
 
       <Section>
         {posts.length === 0 ? (
-          <p className="text-center text-brand-gray">No posts yet.</p>
+          <p className="text-center text-neutral-gray">No posts yet.</p>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {posts.map((r) => (

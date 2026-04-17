@@ -24,12 +24,12 @@ export function ModuleLayout({ mod }: { mod: ModuleDetail }) {
           className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,theme(colors.brand.peach/20),transparent_55%),radial-gradient(ellipse_at_bottom_left,theme(colors.brand.mid/15),transparent_55%)]"
         />
         <div className="container pt-14 pb-10 lg:pt-20 lg:pb-14">
-          <nav className="flex items-center gap-1.5 text-xs text-brand-gray mb-6">
+          <nav className="flex items-center gap-1.5 text-xs text-neutral-gray mb-6">
             <Link href="/product" className="hover:text-brand-dark">Product</Link>
             <ChevronRight className="h-3 w-3" />
             <Link href={suiteMeta.href} className="hover:text-brand-dark">{suiteMeta.name}</Link>
             <ChevronRight className="h-3 w-3" />
-            <span className="text-brand-ink">{mod.name}</span>
+            <span className="text-neutral-text">{mod.name}</span>
           </nav>
 
           <div className="grid lg:grid-cols-12 gap-10 items-start">
@@ -37,16 +37,16 @@ export function ModuleLayout({ mod }: { mod: ModuleDetail }) {
               <span className="inline-flex items-center gap-2 rounded-full border border-brand-mid/20 bg-white/70 backdrop-blur px-3 py-1 text-eyebrow uppercase text-brand-mid">
                 Module · {suiteMeta.name}
               </span>
-              <h1 className="text-display-xl text-balance text-brand-ink">{mod.name}</h1>
-              <p className="text-lg text-brand-ink/80 font-medium">{mod.tagline}</p>
-              <p className="text-base text-brand-gray text-pretty max-w-2xl">{mod.heroBody}</p>
+              <h1 className="text-display-xl text-balance text-neutral-text">{mod.name}</h1>
+              <p className="text-lg text-neutral-text/80 font-medium">{mod.tagline}</p>
+              <p className="text-base text-neutral-gray text-pretty max-w-2xl">{mod.heroBody}</p>
               <div className="flex flex-wrap items-center gap-3 pt-2">
-                <Button asChild size="lg" className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-6">
+                <Button asChild size="lg" className="h-12 px-6">
                   <Link href="/request-demo">
                     Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button asChild variant="ghost" size="lg" className="h-12 px-5 text-brand-dark hover:bg-brand-light">
+                <Button asChild variant="ghost" size="lg" className="h-12 px-5 text-brand-dark hover:bg-neutral-light">
                   <Link href="#capabilities">See capabilities</Link>
                 </Button>
               </div>
@@ -74,7 +74,7 @@ export function ModuleLayout({ mod }: { mod: ModuleDetail }) {
               >
                 &ldquo;
               </span>
-              <blockquote className="text-lg md:text-xl text-brand-ink/90 leading-relaxed text-pretty font-medium">
+              <blockquote className="text-lg md:text-xl text-neutral-text/90 leading-relaxed text-pretty font-medium">
                 {mod.reality}
               </blockquote>
             </figure>
@@ -95,8 +95,8 @@ export function ModuleLayout({ mod }: { mod: ModuleDetail }) {
               <div className="h-10 w-10 rounded-lg bg-brand-peach/25 flex items-center justify-center mb-4">
                 <DynamicIcon name={cap.icon} className="h-5 w-5 text-brand-dark" />
               </div>
-              <div className="text-base font-semibold text-brand-ink">{cap.title}</div>
-              <p className="mt-2 text-sm text-brand-gray text-pretty">{cap.body}</p>
+              <div className="text-base font-semibold text-neutral-text">{cap.title}</div>
+              <p className="mt-2 text-sm text-neutral-gray text-pretty">{cap.body}</p>
             </div>
           ))}
         </div>
@@ -115,9 +115,9 @@ export function ModuleLayout({ mod }: { mod: ModuleDetail }) {
                 <div className="h-8 w-8 rounded-full bg-brand-dark text-white text-xs font-semibold flex items-center justify-center">
                   {i + 1}
                 </div>
-                <div className="text-base font-semibold text-brand-ink">{step.title}</div>
+                <div className="text-base font-semibold text-neutral-text">{step.title}</div>
               </div>
-              <p className="text-sm text-brand-gray text-pretty">{step.description}</p>
+              <p className="text-sm text-neutral-gray text-pretty">{step.description}</p>
             </li>
           ))}
         </ol>
@@ -136,9 +136,9 @@ export function ModuleLayout({ mod }: { mod: ModuleDetail }) {
               <Link
                 key={m.slug}
                 href={`/product/${m.slug}`}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card hover:border-brand-dark/30 hover:bg-background transition-all px-4 py-2 text-sm font-medium text-brand-ink"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card hover:border-brand-dark/30 hover:bg-background transition-all duration-fast ease-flexi-snap px-4 py-2 text-sm font-medium text-neutral-text"
               >
-                <Check className="h-3.5 w-3.5 text-brand-success" />
+                <Check className="h-3.5 w-3.5 text-success" />
                 {m.name}
               </Link>
             ))}
@@ -171,7 +171,7 @@ export function ModuleLayout({ mod }: { mod: ModuleDetail }) {
                 )}
               </div>
               <div className="md:col-span-2 md:text-right">
-                <Button asChild className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-6">
+                <Button asChild className="h-12 px-6">
                   <Link href="/customers">
                     See more customers <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
@@ -194,10 +194,10 @@ export function ModuleLayout({ mod }: { mod: ModuleDetail }) {
               <Link
                 key={m.slug}
                 href={`/product/${m.slug}`}
-                className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all p-5"
+                className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all duration-fast ease-flexi-snap p-5"
               >
-                <div className="text-sm font-semibold text-brand-ink group-hover:text-brand-dark">{m.name}</div>
-                <p className="mt-1 text-xs text-brand-gray line-clamp-2">{m.tagline}</p>
+                <div className="text-sm font-semibold text-neutral-text group-hover:text-brand-dark">{m.name}</div>
+                <p className="mt-1 text-xs text-neutral-gray line-clamp-2">{m.tagline}</p>
               </Link>
             ))}
           </div>
@@ -211,7 +211,7 @@ export function ModuleLayout({ mod }: { mod: ModuleDetail }) {
             See {mod.name} configured to your company in 30 minutes.
           </h2>
           <div className="mt-8">
-            <Button asChild size="lg" className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-7">
+            <Button asChild size="lg" className="h-12 px-7">
               <Link href="/request-demo">
                 Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
@@ -231,27 +231,27 @@ function ModuleScreenshot({ mod }: { mod: ModuleDetail }) {
         <div className="flex items-center justify-between mb-4">
           <div className="text-[10px] uppercase tracking-[0.18em] text-brand-mid">{mod.name} · preview</div>
           <div className="flex gap-1">
-            <span className="h-2 w-2 rounded-full bg-brand-gray/30" />
-            <span className="h-2 w-2 rounded-full bg-brand-gray/30" />
+            <span className="h-2 w-2 rounded-full bg-neutral-gray/30" />
+            <span className="h-2 w-2 rounded-full bg-neutral-gray/30" />
             <span className="h-2 w-2 rounded-full bg-brand-peach" />
           </div>
         </div>
         <div className="space-y-2.5">
           {mod.capabilities.slice(0, 4).map((c) => (
-            <div key={c.title} className="flex items-start gap-3 rounded-lg bg-brand-light/70 border border-border px-3 py-2.5">
+            <div key={c.title} className="flex items-start gap-3 rounded-lg bg-neutral-light/70 border border-border px-3 py-2.5">
               <div className="h-7 w-7 rounded-md bg-brand-peach/40 flex items-center justify-center shrink-0">
                 <DynamicIcon name={c.icon} className="h-3.5 w-3.5 text-brand-dark" />
               </div>
               <div className="min-w-0">
-                <div className="text-xs font-semibold text-brand-ink truncate">{c.title}</div>
-                <div className="text-[11px] text-brand-gray line-clamp-1">{c.body}</div>
+                <div className="text-xs font-semibold text-neutral-text truncate">{c.title}</div>
+                <div className="text-[11px] text-neutral-gray line-clamp-1">{c.body}</div>
               </div>
             </div>
           ))}
         </div>
         <div className="mt-4 pt-3 border-t border-border flex items-center justify-between text-[11px] uppercase tracking-wider">
-          <span className="text-brand-gray">Screenshot placeholder</span>
-          <span className="text-brand-warning font-semibold">TODO — real UI capture</span>
+          <span className="text-neutral-gray">Screenshot placeholder</span>
+          <span className="text-warning font-semibold">TODO — real UI capture</span>
         </div>
       </div>
     </div>

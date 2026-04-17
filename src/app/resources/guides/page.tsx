@@ -22,7 +22,7 @@ export default function GuidesPage() {
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-mid/20 bg-white/70 backdrop-blur px-3 py-1 text-eyebrow uppercase text-brand-mid">
               Guides
             </span>
-            <h1 className="text-display-lg text-balance text-brand-ink">
+            <h1 className="text-display-lg text-balance text-neutral-text">
               Practical guides. Built to use, not to download and forget.
             </h1>
           </div>
@@ -31,7 +31,7 @@ export default function GuidesPage() {
 
       <Section>
         {guides.length === 0 ? (
-          <p className="text-center text-brand-gray">No guides yet.</p>
+          <p className="text-center text-neutral-gray">No guides yet.</p>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {guides.map((r) => (

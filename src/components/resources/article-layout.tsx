@@ -18,7 +18,7 @@ export function ArticleLayout({ r }: { r: Resource }) {
         <div className="container pt-12 pb-8 lg:pt-16 lg:pb-10">
           <Link
             href={cat.href}
-            className="inline-flex items-center gap-1.5 text-sm text-brand-gray hover:text-brand-dark"
+            className="inline-flex items-center gap-1.5 text-sm text-neutral-gray hover:text-brand-dark"
           >
             <ArrowLeft className="h-3.5 w-3.5" /> Back to {cat.label}
           </Link>
@@ -29,15 +29,15 @@ export function ArticleLayout({ r }: { r: Resource }) {
                 {cat.label}
               </span>
               {r.tags.map((t) => (
-                <span key={t} className="inline-flex items-center rounded-full bg-brand-light border border-border px-2 py-0.5 text-[10px] uppercase tracking-wider text-brand-mid">
+                <span key={t} className="inline-flex items-center rounded-full bg-neutral-light border border-border px-2 py-0.5 text-[10px] uppercase tracking-wider text-brand-mid">
                   {t}
                 </span>
               ))}
               {r.isSeed && <TodoBadge>Seed post — full content in Phase 9</TodoBadge>}
             </div>
-            <h1 className="text-display-xl text-brand-ink text-balance">{r.title}</h1>
-            <p className="mt-4 text-lg text-brand-gray text-pretty">{r.description}</p>
-            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-brand-gray">
+            <h1 className="text-display-xl text-neutral-text text-balance">{r.title}</h1>
+            <p className="mt-4 text-lg text-neutral-gray text-pretty">{r.description}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-neutral-gray">
               {r.author && <span>{r.author}</span>}
               <span>{formatDate(r.publishedAt)}</span>
               {r.updatedAt && <span>Updated {formatDate(r.updatedAt)}</span>}
@@ -53,7 +53,7 @@ export function ArticleLayout({ r }: { r: Resource }) {
         <div className="max-w-3xl">
           <div className="rounded-2xl border border-border bg-card p-6 md:p-8 mb-10">
             <div className="text-eyebrow uppercase text-brand-mid mb-2">Summary</div>
-            <p className="text-base text-brand-ink/90 text-pretty">{r.excerpt}</p>
+            <p className="text-base text-neutral-text/90 text-pretty">{r.excerpt}</p>
           </div>
 
           <article className="max-w-none">
@@ -68,7 +68,7 @@ export function ArticleLayout({ r }: { r: Resource }) {
             Want to see the product these ideas came from?
           </h2>
           <div className="mt-6">
-            <Button asChild className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-11 px-6">
+            <Button asChild className="h-11 px-6">
               <Link href="/request-demo">
                 Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
               </Link>

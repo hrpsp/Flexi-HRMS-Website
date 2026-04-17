@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 export function FinalCta() {
   const phone = siteConfig.company.phones[0];
   return (
-    <section className="relative overflow-hidden bg-brand-dark text-white">
+    <section className="relative overflow-hidden bg-brand-gradient text-white">
       <div
         aria-hidden
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,theme(colors.brand.peach/25),transparent_60%),radial-gradient(ellipse_at_80%_80%,theme(colors.brand.mid/40),transparent_60%)]"
@@ -19,7 +19,7 @@ export function FinalCta() {
           A product specialist will walk through Flexi HQ + Flexi Meta for your industry, with live payroll, compliance, and mobile scenarios.
         </p>
         <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <Button asChild size="lg" className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-7">
+          <Button asChild size="lg" className="h-12 px-7">
             <Link href="/request-demo">
               Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
             </Link>

@@ -20,25 +20,25 @@ export function SolutionLayout({ solution }: { solution: Solution }) {
           className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,theme(colors.brand.peach/22),transparent_55%),radial-gradient(ellipse_at_bottom_right,theme(colors.brand.mid/16),transparent_55%)]"
         />
         <div className="container pt-16 pb-12 lg:pt-24 lg:pb-16">
-          <nav className="flex items-center gap-1.5 text-xs text-brand-gray mb-6">
+          <nav className="flex items-center gap-1.5 text-xs text-neutral-gray mb-6">
             <Link href="/solutions" className="hover:text-brand-dark">Solutions</Link>
             <ChevronRight className="h-3 w-3" />
-            <span className="text-brand-ink">{solution.name}</span>
+            <span className="text-neutral-text">{solution.name}</span>
           </nav>
 
           <div className="max-w-3xl space-y-5">
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-mid/20 bg-white/70 backdrop-blur px-3 py-1 text-eyebrow uppercase text-brand-mid">
               {solution.eyebrow}
             </span>
-            <h1 className="text-display-xl text-balance text-brand-ink">{solution.heroHeadline}</h1>
-            <p className="text-lg text-brand-gray text-pretty">{solution.heroBody}</p>
+            <h1 className="text-display-xl text-balance text-neutral-text">{solution.heroHeadline}</h1>
+            <p className="text-lg text-neutral-gray text-pretty">{solution.heroBody}</p>
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <Button asChild size="lg" className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-6">
+              <Button asChild size="lg" className="h-12 px-6">
                 <Link href="/request-demo">
                   Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="ghost" size="lg" className="h-12 px-5 text-brand-dark hover:bg-brand-light">
+              <Button asChild variant="ghost" size="lg" className="h-12 px-5 text-brand-dark hover:bg-neutral-light">
                 <Link href="/customers">See customer stories</Link>
               </Button>
             </div>
@@ -55,11 +55,11 @@ export function SolutionLayout({ solution }: { solution: Solution }) {
         <div className="mt-12 grid sm:grid-cols-2 gap-4">
           {solution.painPoints.map((p) => (
             <div key={p.title} className="rounded-2xl border border-border bg-card p-6">
-              <div className="h-10 w-10 rounded-lg bg-brand-warning/20 flex items-center justify-center mb-4">
+              <div className="h-10 w-10 rounded-lg bg-warning/20 flex items-center justify-center mb-4">
                 <DynamicIcon name={p.icon} className="h-5 w-5 text-brand-dark" />
               </div>
-              <div className="text-base font-semibold text-brand-ink">{p.title}</div>
-              <p className="mt-2 text-sm text-brand-gray text-pretty">{p.body}</p>
+              <div className="text-base font-semibold text-neutral-text">{p.title}</div>
+              <p className="mt-2 text-sm text-neutral-gray text-pretty">{p.body}</p>
             </div>
           ))}
         </div>
@@ -86,8 +86,8 @@ export function SolutionLayout({ solution }: { solution: Solution }) {
               <div className="h-8 w-8 rounded-full bg-brand-dark text-white text-xs font-semibold flex items-center justify-center mb-4">
                 {i + 1}
               </div>
-              <div className="text-base font-semibold text-brand-ink">{beat.title}</div>
-              <p className="mt-2 text-sm text-brand-gray text-pretty">{beat.body}</p>
+              <div className="text-base font-semibold text-neutral-text">{beat.title}</div>
+              <p className="mt-2 text-sm text-neutral-gray text-pretty">{beat.body}</p>
             </div>
           ))}
         </div>
@@ -104,10 +104,10 @@ export function SolutionLayout({ solution }: { solution: Solution }) {
             <Link
               key={m.slug}
               href={`/product/${m.slug}`}
-              className="group rounded-xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-sm transition-all p-4"
+              className="group rounded-xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-sm transition-all duration-fast ease-flexi-snap p-4"
             >
-              <div className="text-sm font-semibold text-brand-ink group-hover:text-brand-dark">{m.name}</div>
-              <div className="text-xs text-brand-gray line-clamp-2 mt-1">{m.tagline}</div>
+              <div className="text-sm font-semibold text-neutral-text group-hover:text-brand-dark">{m.name}</div>
+              <div className="text-xs text-neutral-gray line-clamp-2 mt-1">{m.tagline}</div>
             </Link>
           ))}
         </div>
@@ -125,7 +125,7 @@ export function SolutionLayout({ solution }: { solution: Solution }) {
             {solution.relevantCustomers.map((c) => (
               <span
                 key={c}
-                className="inline-flex items-center rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-brand-ink"
+                className="inline-flex items-center rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-neutral-text"
               >
                 {c}
               </span>
@@ -141,7 +141,7 @@ export function SolutionLayout({ solution }: { solution: Solution }) {
             See Flexi HRMS configured for {solution.name} in 30 minutes.
           </h2>
           <div className="mt-8">
-            <Button asChild size="lg" className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-7">
+            <Button asChild size="lg" className="h-12 px-7">
               <Link href="/request-demo">
                 Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
               </Link>

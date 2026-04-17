@@ -29,16 +29,16 @@ export function IndustryGrid() {
             <Link
               key={ind.slug}
               href={ind.href}
-              className={`group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all p-6 ${
+              className={`group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all duration-fast ease-flexi-snap p-6 ${
                 i === 6 ? "sm:col-span-2 lg:col-span-1" : ""
               }`}
             >
               <div className="h-10 w-10 rounded-lg bg-brand-mid/10 flex items-center justify-center mb-5 group-hover:bg-brand-peach/30 transition-colors">
                 <Icon className="h-5 w-5 text-brand-dark" />
               </div>
-              <div className="text-base font-semibold text-brand-ink">{ind.name}</div>
-              <p className="mt-1.5 text-sm text-brand-gray text-pretty line-clamp-3">{ind.blurb}</p>
-              <div className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-brand-dark group-hover:gap-1.5 transition-all">
+              <div className="text-base font-semibold text-neutral-text">{ind.name}</div>
+              <p className="mt-1.5 text-sm text-neutral-gray text-pretty line-clamp-3">{ind.blurb}</p>
+              <div className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-brand-dark group-hover:gap-1.5 transition-all duration-fast ease-flexi-snap">
                 See {ind.name} solution <ArrowRight className="h-3 w-3" />
               </div>
             </Link>

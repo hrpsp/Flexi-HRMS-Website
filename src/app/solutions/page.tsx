@@ -40,14 +40,14 @@ export default function SolutionsPage() {
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-mid/20 bg-white/70 backdrop-blur px-3 py-1 text-eyebrow uppercase text-brand-mid">
               Solutions
             </span>
-            <h1 className="text-display-xl text-balance text-brand-ink">
+            <h1 className="text-display-xl text-balance text-neutral-text">
               Built for how Pakistani industries actually work.
             </h1>
-            <p className="text-lg text-brand-gray text-pretty">
+            <p className="text-lg text-neutral-gray text-pretty">
               Flexi HRMS configures to the operating reality of each industry — not a generic template. Here&apos;s how it lands in the industries we serve, and what different evaluators care about.
             </p>
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <Button asChild size="lg" className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-6">
+              <Button asChild size="lg" className="h-12 px-6">
                 <Link href="/request-demo">
                   Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
@@ -70,14 +70,14 @@ export default function SolutionsPage() {
               <Link
                 key={s.slug}
                 href={`/solutions/${s.slug}`}
-                className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all p-6"
+                className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all duration-fast ease-flexi-snap p-6"
               >
                 <div className="h-10 w-10 rounded-lg bg-brand-peach/25 flex items-center justify-center mb-4 group-hover:bg-brand-peach/40 transition-colors">
                   <Icon className="h-5 w-5 text-brand-dark" />
                 </div>
-                <div className="text-base font-semibold text-brand-ink">{s.name}</div>
-                <p className="mt-1.5 text-sm text-brand-gray line-clamp-2">{s.heroBody}</p>
-                <div className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-brand-dark group-hover:gap-1.5 transition-all">
+                <div className="text-base font-semibold text-neutral-text">{s.name}</div>
+                <p className="mt-1.5 text-sm text-neutral-gray line-clamp-2">{s.heroBody}</p>
+                <div className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-brand-dark group-hover:gap-1.5 transition-all duration-fast ease-flexi-snap">
                   See {s.name} solution <ArrowRight className="h-3 w-3" />
                 </div>
               </Link>
@@ -99,14 +99,14 @@ export default function SolutionsPage() {
               <Link
                 key={s.slug}
                 href={`/solutions/${s.slug}`}
-                className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all p-7"
+                className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all duration-fast ease-flexi-snap p-7"
               >
                 <div className="h-11 w-11 rounded-lg bg-brand-mid/10 flex items-center justify-center mb-5 group-hover:bg-brand-peach/30 transition-colors">
                   <Icon className="h-5 w-5 text-brand-dark" />
                 </div>
-                <div className="text-base font-semibold text-brand-ink">{s.name}</div>
-                <p className="mt-2 text-sm text-brand-gray line-clamp-3">{s.heroBody}</p>
-                <div className="mt-5 inline-flex items-center gap-1 text-xs font-medium text-brand-dark group-hover:gap-1.5 transition-all">
+                <div className="text-base font-semibold text-neutral-text">{s.name}</div>
+                <p className="mt-2 text-sm text-neutral-gray line-clamp-3">{s.heroBody}</p>
+                <div className="mt-5 inline-flex items-center gap-1 text-xs font-medium text-brand-dark group-hover:gap-1.5 transition-all duration-fast ease-flexi-snap">
                   See solution <ArrowRight className="h-3 w-3" />
                 </div>
               </Link>

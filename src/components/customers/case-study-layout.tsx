@@ -13,7 +13,7 @@ export function CaseStudyLayout({ cs }: { cs: CaseStudyDetail }) {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-brand-dark text-white">
+      <section className="relative overflow-hidden bg-brand-gradient text-white">
         <div
           aria-hidden
           className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,theme(colors.brand.peach/25),transparent_60%),radial-gradient(ellipse_at_bottom_left,theme(colors.brand.mid/40),transparent_60%)]"
@@ -43,7 +43,7 @@ export function CaseStudyLayout({ cs }: { cs: CaseStudyDetail }) {
               <p className="text-lg text-white/75 text-pretty max-w-2xl">{cs.heroBlurb}</p>
 
               <div className="flex flex-wrap items-center gap-3 pt-2">
-                <Button asChild size="lg" className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-6">
+                <Button asChild size="lg" className="h-12 px-6">
                   <Link href="/request-demo">
                     Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
@@ -73,10 +73,10 @@ export function CaseStudyLayout({ cs }: { cs: CaseStudyDetail }) {
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4">
             <div className="text-eyebrow uppercase text-brand-mid">Challenge</div>
-            <h2 className="text-display-lg text-brand-ink mt-3">The starting point.</h2>
+            <h2 className="text-display-lg text-neutral-text mt-3">The starting point.</h2>
           </div>
           <div className="lg:col-span-8">
-            <p className="text-base text-brand-ink/90 text-pretty leading-relaxed">{cs.challenge}</p>
+            <p className="text-base text-neutral-text/90 text-pretty leading-relaxed">{cs.challenge}</p>
           </div>
         </div>
       </Section>
@@ -86,16 +86,16 @@ export function CaseStudyLayout({ cs }: { cs: CaseStudyDetail }) {
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4">
             <div className="text-eyebrow uppercase text-brand-mid">Solution</div>
-            <h2 className="text-display-lg text-brand-ink mt-3">What Flexi put in place.</h2>
+            <h2 className="text-display-lg text-neutral-text mt-3">What Flexi put in place.</h2>
           </div>
           <div className="lg:col-span-8">
-            <p className="text-base text-brand-ink/90 text-pretty leading-relaxed">{cs.solution}</p>
+            <p className="text-base text-neutral-text/90 text-pretty leading-relaxed">{cs.solution}</p>
             <div className="mt-8 flex flex-wrap gap-2">
               {mods.map((m) => (
                 <Link
                   key={m.slug}
                   href={`/product/${m.slug}`}
-                  className="inline-flex items-center rounded-full border border-border bg-card hover:border-brand-dark/30 px-3 py-1.5 text-xs font-medium text-brand-ink transition-colors"
+                  className="inline-flex items-center rounded-full border border-border bg-card hover:border-brand-dark/30 px-3 py-1.5 text-xs font-medium text-neutral-text transition-colors"
                 >
                   {m.name}
                 </Link>
@@ -121,13 +121,13 @@ export function CaseStudyLayout({ cs }: { cs: CaseStudyDetail }) {
             <div
               key={i}
               className={`rounded-2xl border p-6 ${
-                o.isConfirmed ? "border-border bg-card" : "border-dashed border-brand-warning/40 bg-brand-warning/5"
+                o.isConfirmed ? "border-border bg-card" : "border-dashed border-warning/40 bg-warning/5"
               }`}
             >
-              <div className={`text-3xl font-bold tracking-tight ${o.isConfirmed ? "text-brand-dark" : "text-brand-warning"}`}>
+              <div className={`text-3xl font-bold tracking-tight ${o.isConfirmed ? "text-brand-dark" : "text-warning"}`}>
                 {o.stat}
               </div>
-              <div className="mt-2 text-xs uppercase tracking-wider text-brand-gray">{o.label}</div>
+              <div className="mt-2 text-xs uppercase tracking-wider text-neutral-gray">{o.label}</div>
               {!o.isConfirmed && <div className="mt-3"><TodoBadge>Pending</TodoBadge></div>}
             </div>
           ))}
@@ -139,17 +139,17 @@ export function CaseStudyLayout({ cs }: { cs: CaseStudyDetail }) {
         <Section tone="light">
           <div className="max-w-3xl mx-auto text-center">
             {!cs.quote.isConfirmed && <div className="mb-4 flex justify-center"><TodoBadge>Quote pending approval</TodoBadge></div>}
-            <blockquote className="text-2xl md:text-3xl font-medium text-brand-ink text-balance leading-relaxed">
+            <blockquote className="text-2xl md:text-3xl font-medium text-neutral-text text-balance leading-relaxed">
               &ldquo;{cs.quote.text}&rdquo;
             </blockquote>
-            <div className="mt-6 text-sm text-brand-gray">— {cs.quote.attribution}</div>
+            <div className="mt-6 text-sm text-neutral-gray">— {cs.quote.attribution}</div>
           </div>
         </Section>
       ) : (
         <Section tone="light">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex justify-center mb-4"><TodoBadge>Customer quote pending</TodoBadge></div>
-            <p className="text-sm text-brand-gray">A formal testimonial will be added when approved by {cs.customer}.</p>
+            <p className="text-sm text-neutral-gray">A formal testimonial will be added when approved by {cs.customer}.</p>
           </div>
         </Section>
       )}
@@ -159,7 +159,7 @@ export function CaseStudyLayout({ cs }: { cs: CaseStudyDetail }) {
         <Section>
           <div className="rounded-2xl border border-border bg-card p-6 md:p-8 max-w-3xl">
             <div className="text-eyebrow uppercase text-brand-mid">Implementation</div>
-            <div className={`mt-2 text-lg font-medium ${cs.timeline.startsWith("TODO") ? "text-brand-warning" : "text-brand-ink"}`}>
+            <div className={`mt-2 text-lg font-medium ${cs.timeline.startsWith("TODO") ? "text-warning" : "text-neutral-text"}`}>
               {cs.timeline}
             </div>
           </div>
@@ -173,7 +173,7 @@ export function CaseStudyLayout({ cs }: { cs: CaseStudyDetail }) {
             See what Flexi HRMS could look like for your company.
           </h2>
           <div className="mt-8">
-            <Button asChild size="lg" className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-7">
+            <Button asChild size="lg" className="h-12 px-7">
               <Link href="/request-demo">
                 Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
               </Link>

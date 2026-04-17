@@ -55,10 +55,10 @@ export default function ContactPage() {
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-mid/20 bg-white/70 backdrop-blur px-3 py-1 text-eyebrow uppercase text-brand-mid">
               Contact
             </span>
-            <h1 className="text-display-xl text-balance text-brand-ink">
+            <h1 className="text-display-xl text-balance text-neutral-text">
               Talk to the team in Lahore.
             </h1>
-            <p className="text-lg text-brand-gray text-pretty">
+            <p className="text-lg text-neutral-gray text-pretty">
               For the fastest route to a demo, use the request-demo form. For anything else, the direct channels are below.
             </p>
           </div>
@@ -73,17 +73,17 @@ export default function ContactPage() {
               <div className="space-y-4 text-sm">
                 <div className="flex items-start gap-3">
                   <Building2 className="h-4 w-4 mt-0.5 text-brand-dark shrink-0" />
-                  <div className="font-medium text-brand-ink">{siteConfig.company.legalName}</div>
+                  <div className="font-medium text-neutral-text">{siteConfig.company.legalName}</div>
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin className="h-4 w-4 mt-0.5 text-brand-dark shrink-0" />
-                  <div className="text-brand-ink/90">{siteConfig.company.address}</div>
+                  <div className="text-neutral-text/90">{siteConfig.company.address}</div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Phone className="h-4 w-4 mt-0.5 text-brand-dark shrink-0" />
                   <div className="flex flex-col gap-0.5">
                     {siteConfig.company.phones.map((p) => (
-                      <a key={p} href={`tel:${p.replace(/-/g, "")}`} className="text-brand-ink/90 hover:text-brand-dark">
+                      <a key={p} href={`tel:${p.replace(/-/g, "")}`} className="text-neutral-text/90 hover:text-brand-dark">
                         {p}
                       </a>
                     ))}
@@ -91,22 +91,22 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-start gap-3">
                   <Mail className="h-4 w-4 mt-0.5 text-brand-dark shrink-0" />
-                  <a href={`mailto:${siteConfig.company.email}`} className="text-brand-ink/90 hover:text-brand-dark">
+                  <a href={`mailto:${siteConfig.company.email}`} className="text-neutral-text/90 hover:text-brand-dark">
                     {siteConfig.company.email}
                   </a>
                 </div>
                 <div className="flex items-start gap-3">
                   <LinkedinIcon className="h-4 w-4 mt-0.5 text-brand-dark shrink-0" />
-                  <a href={siteConfig.company.linkedin} target="_blank" rel="noopener noreferrer" className="text-brand-ink/90 hover:text-brand-dark">
+                  <a href={siteConfig.company.linkedin} target="_blank" rel="noopener noreferrer" className="text-neutral-text/90 hover:text-brand-dark">
                     LinkedIn
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-2xl border border-dashed border-brand-mid/30 bg-brand-light/40 p-6">
-              <div className="text-sm text-brand-ink font-medium mb-1">Looking for HR outsourcing?</div>
-              <p className="text-sm text-brand-gray text-pretty">
+            <div className="rounded-2xl border border-dashed border-brand-mid/30 bg-neutral-light/40 p-6">
+              <div className="text-sm text-neutral-text font-medium mb-1">Looking for HR outsourcing?</div>
+              <p className="text-sm text-neutral-gray text-pretty">
                 Our sister company HRPSP runs HR end-to-end as a service on the Flexi HRMS platform. See{" "}
                 <a href={siteConfig.company.sisterUrl} target="_blank" rel="noopener noreferrer" className="text-brand-dark underline underline-offset-4 hover:text-brand-mid">hrpsp.net</a>.
               </p>
@@ -117,8 +117,8 @@ export default function ContactPage() {
             {purposes.map((p) => (
               <div key={p.title} className="rounded-2xl border border-border bg-card p-6 flex flex-col sm:flex-row sm:items-center gap-4">
                 <div className="flex-1">
-                  <div className="font-semibold text-brand-ink">{p.title}</div>
-                  <p className="text-sm text-brand-gray mt-1 text-pretty">{p.body}</p>
+                  <div className="font-semibold text-neutral-text">{p.title}</div>
+                  <p className="text-sm text-neutral-gray mt-1 text-pretty">{p.body}</p>
                 </div>
                 {p.cta && (
                   <Button asChild className="bg-brand-dark text-white hover:bg-brand-dark/90 h-10 px-5 shrink-0">

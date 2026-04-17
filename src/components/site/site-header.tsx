@@ -14,7 +14,7 @@ export function SiteHeader() {
   const [openGroup, setOpenGroup] = useState<string | null>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setScrolled(window.scrollY > 100);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -30,13 +30,18 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
+        "sticky top-0 z-50 w-full transition-[background-color,box-shadow,backdrop-filter,border-color] duration-base ease-flexi-snap",
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border/60"
-          : "bg-transparent"
+          ? "bg-background/80 backdrop-blur-[12px] border-b border-border/60 shadow-[0_2px_12px_rgba(50,46,83,0.04)]"
+          : "bg-transparent border-b border-transparent"
       )}
     >
-      <div className="container flex h-16 items-center justify-between gap-6">
+      <div
+        className={cn(
+          "container flex items-center justify-between gap-6 transition-[height] duration-base ease-flexi-snap",
+          scrolled ? "h-16" : "h-20"
+        )}
+      >
         <Logo />
 
         <nav className="hidden lg:flex items-center gap-1" onMouseLeave={() => setOpenGroup(null)}>
@@ -47,7 +52,7 @@ export function SiteHeader() {
                 <Link
                   key={group.label}
                   href={group.href}
-                  className="px-3 py-2 text-sm font-medium text-brand-ink/80 hover:text-brand-dark transition-colors"
+                  className="px-3 py-2 text-sm font-medium text-neutral-text/80 hover:text-brand-dark transition-colors"
                 >
                   {group.label}
                 </Link>
@@ -58,7 +63,7 @@ export function SiteHeader() {
               <div key={group.label} className="relative" onMouseEnter={() => setOpenGroup(group.label)}>
                 <button
                   type="button"
-                  className="inline-flex items-center gap-1 px-3 py-2 text-sm font-medium text-brand-ink/80 hover:text-brand-dark transition-colors"
+                  className="inline-flex items-center gap-1 px-3 py-2 text-sm font-medium text-neutral-text/80 hover:text-brand-dark transition-colors"
                   aria-expanded={isOpen}
                 >
                   {group.label}
@@ -74,19 +79,19 @@ export function SiteHeader() {
                     >
                       {group.columns.map((col) => (
                         <div key={col.heading}>
-                          <div className="text-eyebrow uppercase text-brand-gray mb-3">{col.heading}</div>
+                          <div className="text-eyebrow uppercase text-neutral-gray mb-3">{col.heading}</div>
                           <ul className="space-y-2.5">
                             {col.links.map((link) => (
                               <li key={link.href}>
                                 <Link
                                   href={link.href}
-                                  className="group block rounded-md -mx-2 px-2 py-1.5 hover:bg-brand-light transition-colors"
+                                  className="group block rounded-md -mx-2 px-2 py-1.5 hover:bg-neutral-light transition-colors"
                                 >
-                                  <div className="text-sm font-medium text-brand-ink group-hover:text-brand-dark">
+                                  <div className="text-sm font-medium text-neutral-text group-hover:text-brand-dark">
                                     {link.label}
                                   </div>
                                   {link.description && (
-                                    <div className="text-xs text-brand-gray mt-0.5">{link.description}</div>
+                                    <div className="text-xs text-neutral-gray mt-0.5">{link.description}</div>
                                   )}
                                 </Link>
                               </li>
@@ -106,7 +111,7 @@ export function SiteHeader() {
           <Button variant="ghost" asChild>
             <Link href="/sign-in">Sign In</Link>
           </Button>
-          <Button asChild className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90">
+          <Button asChild>
             <Link href="/request-demo">Request Demo</Link>
           </Button>
         </div>
@@ -114,7 +119,7 @@ export function SiteHeader() {
         <button
           type="button"
           onClick={() => setMobileOpen((v) => !v)}
-          className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md text-brand-ink hover:bg-brand-light"
+          className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md text-neutral-text hover:bg-neutral-light"
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
         >
@@ -130,14 +135,14 @@ export function SiteHeader() {
                 {group.href ? (
                   <Link
                     href={group.href}
-                    className="block text-lg font-semibold text-brand-ink py-2"
+                    className="block text-lg font-semibold text-neutral-text py-2"
                     onClick={() => setMobileOpen(false)}
                   >
                     {group.label}
                   </Link>
                 ) : (
                   <>
-                    <div className="text-eyebrow uppercase text-brand-gray mb-3">{group.label}</div>
+                    <div className="text-eyebrow uppercase text-neutral-gray mb-3">{group.label}</div>
                     <div className="space-y-4">
                       {group.columns?.map((col) => (
                         <div key={col.heading}>
@@ -147,7 +152,7 @@ export function SiteHeader() {
                               <li key={link.href}>
                                 <Link
                                   href={link.href}
-                                  className="block text-sm text-brand-ink/80 py-1"
+                                  className="block text-sm text-neutral-text/80 py-1"
                                   onClick={() => setMobileOpen(false)}
                                 >
                                   {link.label}
@@ -166,7 +171,7 @@ export function SiteHeader() {
               <Button variant="outline" asChild>
                 <Link href="/sign-in" onClick={() => setMobileOpen(false)}>Sign In</Link>
               </Button>
-              <Button asChild className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90">
+              <Button asChild>
                 <Link href="/request-demo" onClick={() => setMobileOpen(false)}>Request Demo</Link>
               </Button>
             </div>

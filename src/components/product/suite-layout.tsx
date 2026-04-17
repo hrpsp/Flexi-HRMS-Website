@@ -16,10 +16,10 @@ export function SuiteLayout({ suite, extras }: { suite: SuiteDetail; extras?: Re
           className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,theme(colors.brand.peach/25),transparent_55%),radial-gradient(ellipse_at_bottom_right,theme(colors.brand.mid/18),transparent_55%)]"
         />
         <div className="container pt-16 pb-12 lg:pt-24 lg:pb-16">
-          <nav className="flex items-center gap-1.5 text-xs text-brand-gray mb-6">
+          <nav className="flex items-center gap-1.5 text-xs text-neutral-gray mb-6">
             <Link href="/product" className="hover:text-brand-dark">Product</Link>
             <ChevronRight className="h-3 w-3" />
-            <span className="text-brand-ink">{suite.name}</span>
+            <span className="text-neutral-text">{suite.name}</span>
           </nav>
 
           <div className="grid lg:grid-cols-12 gap-10 items-start">
@@ -27,15 +27,15 @@ export function SuiteLayout({ suite, extras }: { suite: SuiteDetail; extras?: Re
               <span className="inline-flex items-center gap-2 rounded-full border border-brand-mid/20 bg-white/70 backdrop-blur px-3 py-1 text-eyebrow uppercase text-brand-mid">
                 {suite.eyebrow}
               </span>
-              <h1 className="text-display-xl text-balance text-brand-ink">{suite.heroHeadline}</h1>
-              <p className="text-lg text-brand-gray text-pretty max-w-2xl">{suite.heroBody}</p>
+              <h1 className="text-display-xl text-balance text-neutral-text">{suite.heroHeadline}</h1>
+              <p className="text-lg text-neutral-gray text-pretty max-w-2xl">{suite.heroBody}</p>
               <div className="flex flex-wrap items-center gap-3 pt-2">
-                <Button asChild size="lg" className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-6">
+                <Button asChild size="lg" className="h-12 px-6">
                   <Link href="/request-demo">
                     Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button asChild variant="ghost" size="lg" className="h-12 px-5 text-brand-dark hover:bg-brand-light">
+                <Button asChild variant="ghost" size="lg" className="h-12 px-5 text-brand-dark hover:bg-neutral-light">
                   <Link href="#included">Explore modules</Link>
                 </Button>
               </div>
@@ -60,14 +60,14 @@ export function SuiteLayout({ suite, extras }: { suite: SuiteDetail; extras?: Re
             <Link
               key={m.slug}
               href={`/product/${m.slug}`}
-              className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all p-6"
+              className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all duration-fast ease-flexi-snap p-6"
             >
               <div className="h-10 w-10 rounded-lg bg-brand-mid/10 flex items-center justify-center mb-4 group-hover:bg-brand-peach/30 transition-colors">
                 <DynamicIcon name={m.icon} className="h-5 w-5 text-brand-dark" />
               </div>
-              <div className="text-base font-semibold text-brand-ink">{m.name}</div>
-              <p className="mt-1.5 text-sm text-brand-gray">{m.tagline}</p>
-              <div className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-brand-dark group-hover:gap-1.5 transition-all">
+              <div className="text-base font-semibold text-neutral-text">{m.name}</div>
+              <p className="mt-1.5 text-sm text-neutral-gray">{m.tagline}</p>
+              <div className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-brand-dark group-hover:gap-1.5 transition-all duration-fast ease-flexi-snap">
                 Explore {m.name} <ArrowRight className="h-3 w-3" />
               </div>
             </Link>
@@ -89,9 +89,9 @@ export function SuiteLayout({ suite, extras }: { suite: SuiteDetail; extras?: Re
                 <div className="h-8 w-8 rounded-full bg-brand-dark text-white text-xs font-semibold flex items-center justify-center">
                   {i + 1}
                 </div>
-                <div className="text-base font-semibold text-brand-ink">{step.title}</div>
+                <div className="text-base font-semibold text-neutral-text">{step.title}</div>
               </div>
-              <p className="text-sm text-brand-gray text-pretty">{step.description}</p>
+              <p className="text-sm text-neutral-gray text-pretty">{step.description}</p>
             </li>
           ))}
         </ol>
@@ -126,7 +126,7 @@ export function SuiteLayout({ suite, extras }: { suite: SuiteDetail; extras?: Re
                 )}
               </div>
               <div className="md:col-span-2 md:text-right">
-                <Button asChild className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-6">
+                <Button asChild className="h-12 px-6">
                   <Link href="/customers">
                     See more customers <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
@@ -150,12 +150,12 @@ export function SuiteLayout({ suite, extras }: { suite: SuiteDetail; extras?: Re
               <Link
                 key={s}
                 href={sx.href}
-                className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all p-6"
+                className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all duration-fast ease-flexi-snap p-6"
               >
                 <div className="text-eyebrow uppercase text-brand-mid">Suite</div>
-                <div className="mt-1.5 text-lg font-semibold text-brand-ink">{sx.name}</div>
-                <p className="mt-1 text-sm text-brand-gray">{sx.promise}</p>
-                <div className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-dark group-hover:gap-1.5 transition-all">
+                <div className="mt-1.5 text-lg font-semibold text-neutral-text">{sx.name}</div>
+                <p className="mt-1 text-sm text-neutral-gray">{sx.promise}</p>
+                <div className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-dark group-hover:gap-1.5 transition-all duration-fast ease-flexi-snap">
                   Explore <ArrowRight className="h-3.5 w-3.5" />
                 </div>
               </Link>
@@ -176,9 +176,9 @@ function SuiteSchematic({ suite }: { suite: SuiteDetail }) {
         <div className="text-[10px] uppercase tracking-[0.18em] text-brand-mid mb-3">Suite map · {suite.name}</div>
         <div className="grid grid-cols-2 gap-2.5">
           {visible.map((m) => (
-            <div key={m.slug} className="rounded-lg bg-brand-light/80 border border-border px-3 py-2.5 flex items-center gap-2.5">
+            <div key={m.slug} className="rounded-lg bg-neutral-light/80 border border-border px-3 py-2.5 flex items-center gap-2.5">
               <DynamicIcon name={m.icon} className="h-4 w-4 text-brand-dark" />
-              <div className="text-sm font-medium text-brand-ink truncate">{m.name}</div>
+              <div className="text-sm font-medium text-neutral-text truncate">{m.name}</div>
             </div>
           ))}
           {suite.modules.length > 6 && (

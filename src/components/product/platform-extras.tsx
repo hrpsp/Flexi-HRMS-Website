@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { cn } from "@/lib/utils";
 import { KeyRound, Plug, Database, ShieldCheck, Globe2, Scroll } from "lucide-react";
+import { ease, duration, spring } from "@/lib/motion";
 
 const tenants = [
   {
@@ -69,6 +70,7 @@ const technicalCallouts = [
 export function PlatformExtras() {
   const [active, setActive] = useState(tenants[0].key);
   const tenant = tenants.find((t) => t.key === active)!;
+  const reduce = useReducedMotion();
 
   return (
     <>
@@ -88,7 +90,7 @@ export function PlatformExtras() {
                 onClick={() => setActive(t.key)}
                 className={cn(
                   "relative px-5 py-3.5 text-sm font-medium transition-colors",
-                  active === t.key ? "text-brand-dark" : "text-brand-gray hover:text-brand-ink"
+                  active === t.key ? "text-brand-dark" : "text-neutral-gray hover:text-neutral-text"
                 )}
               >
                 {t.label}
@@ -96,7 +98,7 @@ export function PlatformExtras() {
                   <motion.span
                     layoutId="tenant-tab-underline"
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-peach"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    transition={reduce ? { duration: 0 } : spring.soft}
                   />
                 )}
               </button>
@@ -110,16 +112,16 @@ export function PlatformExtras() {
               { label: "Workflow approvals", value: tenant.approval },
               { label: "MobileEdge behaviour", value: tenant.mobile },
             ].map((col, i) => (
-              <div key={col.label} className={cn("p-6", i % 2 === 1 && "bg-brand-light/40")}>
+              <div key={col.label} className={cn("p-6", i % 2 === 1 && "bg-neutral-light/40")}>
                 <div className="text-[10px] uppercase tracking-[0.18em] text-brand-mid mb-2">{col.label}</div>
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={`${active}-${col.label}`}
-                    initial={{ opacity: 0, y: 6 }}
+                    initial={reduce ? false : { opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.25 }}
-                    className="text-sm text-brand-ink font-medium text-pretty"
+                    exit={reduce ? { opacity: 0 } : { opacity: 0, y: -6 }}
+                    transition={{ duration: reduce ? 0 : duration.fast, ease: ease.flexiSnap }}
+                    className="text-sm text-neutral-text font-medium text-pretty"
                   >
                     {col.value}
                   </motion.div>
@@ -129,7 +131,7 @@ export function PlatformExtras() {
           </div>
         </div>
 
-        <p className="mt-8 text-center text-brand-gray max-w-2xl mx-auto">
+        <p className="mt-8 text-center text-neutral-gray max-w-2xl mx-auto">
           None of this requires a branch, a fork, or a ticket. Flexi HQ reads Flexi Meta and configures every module accordingly — at the tenant level, and at the business-unit level within a tenant.
         </p>
       </Section>
@@ -147,8 +149,8 @@ export function PlatformExtras() {
               <div className="h-10 w-10 rounded-lg bg-brand-mid/10 flex items-center justify-center mb-4">
                 <c.icon className="h-5 w-5 text-brand-dark" />
               </div>
-              <div className="text-base font-semibold text-brand-ink">{c.title}</div>
-              <p className="mt-2 text-sm text-brand-gray text-pretty">{c.body}</p>
+              <div className="text-base font-semibold text-neutral-text">{c.title}</div>
+              <p className="mt-2 text-sm text-neutral-gray text-pretty">{c.body}</p>
             </div>
           ))}
         </div>

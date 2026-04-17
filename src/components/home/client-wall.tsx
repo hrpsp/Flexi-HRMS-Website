@@ -17,7 +17,7 @@ export function ClientWall() {
         {clients.map((c) => (
           <div
             key={c.name}
-            className="group flex h-16 items-center justify-center rounded-lg border border-dashed border-brand-gray/30 bg-white/60 px-3 text-center text-[13px] font-medium text-brand-gray transition-all hover:border-brand-mid/40 hover:bg-white hover:text-brand-ink"
+            className="group flex h-16 items-center justify-center rounded-lg border border-dashed border-neutral-gray/30 bg-white/60 px-3 text-center text-[13px] font-medium text-neutral-gray transition-all duration-fast ease-flexi-snap hover:border-brand-mid/40 hover:bg-white hover:text-neutral-text"
             title={`${c.name} — placeholder (real logo pending)`}
           >
             {c.name}
@@ -25,7 +25,7 @@ export function ClientWall() {
         ))}
       </div>
 
-      <div className="mt-10 text-center text-sm text-brand-gray">
+      <div className="mt-10 text-center text-sm text-neutral-gray">
         Plus 70 more organisations across Pakistan.
       </div>
     </Section>

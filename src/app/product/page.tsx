@@ -8,6 +8,7 @@ import { suites, modulesBySuite, type Suite } from "@/data/modules";
 import { suiteDetails } from "@/data/suites";
 import { siteConfig } from "@/lib/site-config";
 import { JsonLd, softwareApplicationSchema, breadcrumbSchema } from "@/lib/jsonld";
+import { ModuleBentoGrid } from "@/components/product/module-bento-grid";
 
 export const metadata: Metadata = {
   title: "Flexi HRMS — the product",
@@ -53,19 +54,19 @@ export default function ProductOverviewPage() {
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-mid/20 bg-white/70 backdrop-blur px-3 py-1 text-eyebrow uppercase text-brand-mid">
               The Flexi HRMS product
             </span>
-            <h1 className="text-display-xl text-balance text-brand-ink">
+            <h1 className="text-display-xl text-balance text-neutral-text">
               Five suites. 28 modules. One platform built for the reality.
             </h1>
-            <p className="text-lg text-brand-gray text-pretty">
+            <p className="text-lg text-neutral-gray text-pretty">
               Flexi HRMS is organised so you can start with the modules you need and grow into the rest. Every suite runs on the same Platform layer — which is why a manufacturing plant, a telecom operator, and a retail chain can all run Flexi without any of them living with someone else&apos;s assumptions.
             </p>
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <Button asChild size="lg" className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-6">
+              <Button asChild size="lg" className="h-12 px-6">
                 <Link href="/request-demo">
                   Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="ghost" size="lg" className="h-12 px-5 text-brand-dark hover:bg-brand-light">
+              <Button asChild variant="ghost" size="lg" className="h-12 px-5 text-brand-dark hover:bg-neutral-light">
                 <Link href="/pricing">See pricing</Link>
               </Button>
             </div>
@@ -88,7 +89,7 @@ export default function ProductOverviewPage() {
               <Link
                 key={s}
                 href={suite.href}
-                className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all p-7"
+                className="group rounded-2xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-md transition-all duration-fast ease-flexi-snap p-7"
               >
                 <div className="flex items-start justify-between gap-4 mb-5">
                   <div className="flex items-start gap-4">
@@ -97,8 +98,8 @@ export default function ProductOverviewPage() {
                     </div>
                     <div>
                       <div className="text-eyebrow uppercase text-brand-mid">Suite</div>
-                      <div className="text-xl font-semibold text-brand-ink mt-1">{suite.name}</div>
-                      <div className="text-sm text-brand-gray mt-1">{suite.promise}</div>
+                      <div className="text-xl font-semibold text-neutral-text mt-1">{suite.name}</div>
+                      <div className="text-sm text-neutral-gray mt-1">{suite.promise}</div>
                     </div>
                   </div>
                 </div>
@@ -106,7 +107,7 @@ export default function ProductOverviewPage() {
                   {mods.slice(0, 6).map((m) => (
                     <span
                       key={m.slug}
-                      className="inline-flex items-center rounded-full border border-border bg-background px-2.5 py-1 text-xs text-brand-ink"
+                      className="inline-flex items-center rounded-full border border-border bg-background px-2.5 py-1 text-xs text-neutral-text"
                     >
                       {m.name}
                     </span>
@@ -117,7 +118,7 @@ export default function ProductOverviewPage() {
                     </span>
                   )}
                 </div>
-                <div className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand-dark group-hover:gap-1.5 transition-all">
+                <div className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand-dark group-hover:gap-1.5 transition-all duration-fast ease-flexi-snap">
                   {hasDetail ? `Explore ${suite.name}` : `${suite.name} — coming soon`} <ArrowRight className="h-3.5 w-3.5" />
                 </div>
               </Link>
@@ -132,21 +133,7 @@ export default function ProductOverviewPage() {
           title="All 28 modules."
           description="Adopt one, adopt all. Add or swap as you grow. Every module runs on Flexi HQ and shares the same data model."
         />
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          {suiteOrder.flatMap((s) =>
-            modulesBySuite(s).map((m) => (
-              <Link
-                key={m.slug}
-                href={`/product/${m.slug}`}
-                className="group rounded-xl border border-border bg-card hover:border-brand-dark/30 hover:shadow-sm transition-all p-4"
-              >
-                <div className="text-xs uppercase tracking-wider text-brand-mid mb-1">{suites[s].name}</div>
-                <div className="text-sm font-semibold text-brand-ink group-hover:text-brand-dark">{m.name}</div>
-                <div className="text-xs text-brand-gray line-clamp-1 mt-0.5">{m.tagline}</div>
-              </Link>
-            ))
-          )}
-        </div>
+        <ModuleBentoGrid />
       </Section>
 
       <section className="bg-brand-dark text-white">
@@ -158,7 +145,7 @@ export default function ProductOverviewPage() {
             A 30-minute demo, configured to your industry, run by a product specialist.
           </p>
           <div className="mt-8">
-            <Button asChild size="lg" className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-12 px-7">
+            <Button asChild size="lg" className="h-12 px-7">
               <Link href="/request-demo">
                 Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
               </Link>

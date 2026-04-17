@@ -24,10 +24,10 @@ export default function CompanyPage() {
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-mid/20 bg-white/70 backdrop-blur px-3 py-1 text-eyebrow uppercase text-brand-mid">
               Company
             </span>
-            <h1 className="text-display-xl text-balance text-brand-ink">
+            <h1 className="text-display-xl text-balance text-neutral-text">
               Built by {siteConfig.company.legalName}. In production since 2011.
             </h1>
-            <p className="text-lg text-brand-gray text-pretty">
+            <p className="text-lg text-neutral-gray text-pretty">
               Flexi HRMS is the flagship HR platform from Flexi IT Services — a Lahore-headquartered enterprise software company serving 100+ Pakistani organisations across telecom, banking, manufacturing, retail, healthcare, and utilities. This site covers Flexi HRMS. The broader company portfolio lives at{" "}
               <a href={siteConfig.company.parentUrl} target="_blank" rel="noopener noreferrer" className="text-brand-dark underline underline-offset-4 hover:text-brand-mid">
                 flexi.pk
@@ -42,9 +42,9 @@ export default function CompanyPage() {
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-5 space-y-3">
             <div className="text-eyebrow uppercase text-brand-mid">What we do</div>
-            <h2 className="text-display-lg text-brand-ink">Enterprise software for Pakistani reality.</h2>
+            <h2 className="text-display-lg text-neutral-text">Enterprise software for Pakistani reality.</h2>
           </div>
-          <div className="lg:col-span-7 space-y-5 text-base text-brand-ink/90 leading-relaxed text-pretty">
+          <div className="lg:col-span-7 space-y-5 text-base text-neutral-text/90 leading-relaxed text-pretty">
             <p>
               Flexi IT Services builds enterprise software designed for the realities Pakistani businesses actually operate in — federal budget changes on 24 hours&apos; notice, provincial labour law variants, WHT slabs that move, and workforces spread across manufacturing floors, tower sites, retail stores, hospital shifts, and distribution zones.
             </p>
@@ -69,7 +69,7 @@ export default function CompanyPage() {
           ].map((s) => (
             <div key={s.l} className="rounded-2xl border border-border bg-card p-6">
               <div className="text-3xl font-bold text-brand-dark">{s.n}</div>
-              <div className="mt-1.5 text-xs uppercase tracking-wider text-brand-gray">{s.l}</div>
+              <div className="mt-1.5 text-xs uppercase tracking-wider text-neutral-gray">{s.l}</div>
             </div>
           ))}
         </div>
@@ -91,15 +91,15 @@ export default function CompanyPage() {
             { role: "Head of Sales", hint: "Commercial leadership" },
             { role: "Head of Compliance", hint: "Pakistan regulatory depth" },
           ].map((slot) => (
-            <div key={slot.role} className="rounded-2xl border border-dashed border-brand-gray/30 bg-brand-light/40 p-6 flex items-start gap-4">
-              <div className="h-14 w-14 rounded-full bg-white border border-border flex items-center justify-center text-brand-gray text-xs font-medium shrink-0">
+            <div key={slot.role} className="rounded-2xl border border-dashed border-neutral-gray/30 bg-neutral-light/40 p-6 flex items-start gap-4">
+              <div className="h-14 w-14 rounded-full bg-white border border-border flex items-center justify-center text-neutral-gray text-xs font-medium shrink-0">
                 Photo
               </div>
               <div className="flex-1 min-w-0">
-                <div className="text-xs uppercase tracking-wider text-brand-warning font-semibold">Pending</div>
-                <div className="mt-1 text-sm font-semibold text-brand-ink">{slot.role}</div>
-                <p className="mt-1 text-xs text-brand-gray">{slot.hint}</p>
-                <p className="mt-3 text-[11px] text-brand-gray/80 italic">
+                <div className="text-xs uppercase tracking-wider text-warning font-semibold">Pending</div>
+                <div className="mt-1 text-sm font-semibold text-neutral-text">{slot.role}</div>
+                <p className="mt-1 text-xs text-neutral-gray">{slot.hint}</p>
+                <p className="mt-3 text-[11px] text-neutral-gray/80 italic">
                   Name, short bio (≤60 words), and approved headshot to go here.
                 </p>
               </div>
@@ -113,16 +113,16 @@ export default function CompanyPage() {
         <div className="mt-12 grid md:grid-cols-2 gap-5">
           <div className="rounded-2xl border border-border bg-card p-7">
             <div className="text-eyebrow uppercase text-brand-mid mb-2">Parent company</div>
-            <div className="text-lg font-semibold text-brand-ink">Flexi IT Services (Pvt.) Ltd.</div>
-            <p className="mt-2 text-sm text-brand-gray text-pretty">
+            <div className="text-lg font-semibold text-neutral-text">Flexi IT Services (Pvt.) Ltd.</div>
+            <p className="mt-2 text-sm text-neutral-gray text-pretty">
               A portfolio of enterprise software products — Flexi HRMS among them. For the full product catalogue, visit{" "}
               <a href={siteConfig.company.parentUrl} target="_blank" rel="noopener noreferrer" className="text-brand-dark underline underline-offset-4 hover:text-brand-mid">flexi.pk</a>.
             </p>
           </div>
           <div className="rounded-2xl border border-border bg-card p-7">
             <div className="text-eyebrow uppercase text-brand-mid mb-2">Sister company</div>
-            <div className="text-lg font-semibold text-brand-ink">HRPSP</div>
-            <p className="mt-2 text-sm text-brand-gray text-pretty">
+            <div className="text-lg font-semibold text-neutral-text">HRPSP</div>
+            <p className="mt-2 text-sm text-neutral-gray text-pretty">
               HR outsourcing, payroll, and recruitment services — delivered on the Flexi HRMS platform. See{" "}
               <a href={siteConfig.company.sisterUrl} target="_blank" rel="noopener noreferrer" className="text-brand-dark underline underline-offset-4 hover:text-brand-mid">hrpsp.net</a>.
             </p>
@@ -136,7 +136,7 @@ export default function CompanyPage() {
             Want to talk to someone on the team?
           </h2>
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Button asChild className="bg-brand-peach text-brand-dark hover:bg-brand-peach/90 h-11 px-6">
+            <Button asChild className="h-11 px-6">
               <Link href="/request-demo">
                 Request a Demo <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
