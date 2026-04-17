@@ -13,7 +13,7 @@ export function SuiteLayout({ suite, extras }: { suite: SuiteDetail; extras?: Re
       <section className="relative overflow-hidden">
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,theme(colors.brand.peach/25),transparent_55%),radial-gradient(ellipse_at_bottom_right,theme(colors.brand.mid/18),transparent_55%)]"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,theme(colors.brand.peach/15),transparent_55%),radial-gradient(ellipse_at_bottom_right,theme(colors.brand.mid/10),transparent_55%)]"
         />
         <div className="container pt-16 pb-12 lg:pt-24 lg:pb-16">
           <nav className="flex items-center gap-1.5 text-xs text-neutral-gray mb-6">
@@ -105,7 +105,7 @@ export function SuiteLayout({ suite, extras }: { suite: SuiteDetail; extras?: Re
           <div className="rounded-3xl bg-brand-dark text-white p-8 md:p-12 relative overflow-hidden">
             <div
               aria-hidden
-              className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,theme(colors.brand.peach/25),transparent_60%)]"
+              className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,theme(colors.brand.peach/15),transparent_60%)]"
             />
             <div className="relative grid md:grid-cols-5 gap-8 items-center">
               <div className="md:col-span-3 space-y-3">

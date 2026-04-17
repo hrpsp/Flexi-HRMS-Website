@@ -344,7 +344,7 @@ export function Hero() {
       <motion.div
         aria-hidden
         style={reduce || degrade ? undefined : { y: bgY }}
-        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_80%_10%,theme(colors.brand.peach/25),transparent_60%),radial-gradient(ellipse_40%_40%_at_10%_80%,theme(colors.brand.mid/18),transparent_60%)]"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_80%_10%,theme(colors.brand.peach/15),transparent_65%),radial-gradient(ellipse_40%_40%_at_10%_80%,theme(colors.brand.mid/8),transparent_65%)]"
       />
       <div className="container pt-20 pb-16 lg:pt-28 lg:pb-24">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">

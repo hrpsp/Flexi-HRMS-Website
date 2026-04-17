@@ -13,7 +13,7 @@ export function ArticleLayout({ r }: { r: Resource }) {
       <section className="relative overflow-hidden">
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,theme(colors.brand.peach/22),transparent_55%)]"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,theme(colors.brand.peach/14),transparent_55%)]"
         />
         <div className="container pt-12 pb-8 lg:pt-16 lg:pb-10">
           <Link

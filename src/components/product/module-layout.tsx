@@ -21,7 +21,7 @@ export function ModuleLayout({ mod }: { mod: ModuleDetail }) {
       <section className="relative overflow-hidden">
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,theme(colors.brand.peach/20),transparent_55%),radial-gradient(ellipse_at_bottom_left,theme(colors.brand.mid/15),transparent_55%)]"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,theme(colors.brand.peach/12),transparent_55%),radial-gradient(ellipse_at_bottom_left,theme(colors.brand.mid/9),transparent_55%)]"
         />
         <div className="container pt-14 pb-10 lg:pt-20 lg:pb-14">
           <nav className="flex items-center gap-1.5 text-xs text-neutral-gray mb-6">
@@ -152,7 +152,7 @@ export function ModuleLayout({ mod }: { mod: ModuleDetail }) {
           <div className="rounded-3xl bg-brand-dark text-white p-8 md:p-12 relative overflow-hidden">
             <div
               aria-hidden
-              className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,theme(colors.brand.peach/20),transparent_60%)]"
+              className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,theme(colors.brand.peach/12),transparent_60%)]"
             />
             <div className="relative grid md:grid-cols-5 gap-8 items-center">
               <div className="md:col-span-3 space-y-3">

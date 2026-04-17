@@ -15,7 +15,7 @@ export default function GuidesPage() {
       <section className="relative overflow-hidden">
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,theme(colors.brand.peach/22),transparent_60%)]"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,theme(colors.brand.peach/14),transparent_60%)]"
         />
         <div className="container pt-16 pb-8 lg:pt-20 lg:pb-10">
           <div className="max-w-3xl space-y-5">

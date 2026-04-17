@@ -9,13 +9,13 @@ export function FinalCta() {
     <section className="relative overflow-hidden bg-brand-gradient text-white">
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,theme(colors.brand.peach/25),transparent_60%),radial-gradient(ellipse_at_80%_80%,theme(colors.brand.mid/40),transparent_60%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,theme(colors.brand.peach/15),transparent_65%),radial-gradient(ellipse_at_80%_80%,theme(colors.brand.mid/20),transparent_65%)]"
       />
       <div className="container relative py-20 md:py-28 text-center">
         <h2 className="text-display-lg text-balance max-w-3xl mx-auto">
           Book a demo. See Flexi HRMS configured to your industry in 30 minutes.
         </h2>
-        <p className="mt-5 text-white/70 max-w-xl mx-auto text-pretty">
+        <p className="mt-5 text-white/85 max-w-xl mx-auto text-pretty">
           A product specialist will walk through Flexi HQ + Flexi Meta for your industry, with live payroll, compliance, and mobile scenarios.
         </p>
         <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">

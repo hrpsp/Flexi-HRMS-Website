@@ -17,7 +17,7 @@ export function SolutionLayout({ solution }: { solution: Solution }) {
       <section className="relative overflow-hidden">
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,theme(colors.brand.peach/22),transparent_55%),radial-gradient(ellipse_at_bottom_right,theme(colors.brand.mid/16),transparent_55%)]"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,theme(colors.brand.peach/14),transparent_55%),radial-gradient(ellipse_at_bottom_right,theme(colors.brand.mid/10),transparent_55%)]"
         />
         <div className="container pt-16 pb-12 lg:pt-24 lg:pb-16">
           <nav className="flex items-center gap-1.5 text-xs text-neutral-gray mb-6">

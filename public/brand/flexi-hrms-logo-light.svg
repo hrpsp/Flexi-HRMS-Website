@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 56" fill="none" role="img" aria-label="Flexi HRMS placeholder logo (light)">
-  <rect x="2" y="8" width="40" height="40" rx="10" fill="#F7F5F2"/>
-  <path d="M14 20h16M14 28h12M14 36h8" stroke="#322E53" stroke-width="2.5" stroke-linecap="round"/>
-  <text x="54" y="34" fill="#F7F5F2" font-family="'League Spartan', system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.02em">Flexi</text>
-  <text x="116" y="34" fill="#EEC293" font-family="'League Spartan', system-ui, sans-serif" font-size="22" font-weight="500" letter-spacing="0.04em">HRMS</text>
-</svg>

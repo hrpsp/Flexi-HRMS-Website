@@ -30,7 +30,7 @@ export default function PricingPage() {
       <section className="relative overflow-hidden">
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,theme(colors.brand.peach/22),transparent_60%),radial-gradient(ellipse_at_bottom_left,theme(colors.brand.mid/15),transparent_55%)]"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,theme(colors.brand.peach/14),transparent_60%),radial-gradient(ellipse_at_bottom_left,theme(colors.brand.mid/9),transparent_55%)]"
         />
         <div className="container pt-20 pb-10 lg:pt-28 lg:pb-14">
           <div className="max-w-3xl mx-auto text-center space-y-5">

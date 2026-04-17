@@ -62,7 +62,7 @@ export default function WhyFlexiPage() {
       <section className="relative overflow-hidden">
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,theme(colors.brand.peach/25),transparent_55%),radial-gradient(ellipse_at_bottom_right,theme(colors.brand.mid/18),transparent_55%)]"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,theme(colors.brand.peach/15),transparent_55%),radial-gradient(ellipse_at_bottom_right,theme(colors.brand.mid/10),transparent_55%)]"
         />
         <div className="container pt-20 pb-14 lg:pt-28 lg:pb-20">
           <div className="max-w-3xl space-y-5">

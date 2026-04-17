@@ -119,7 +119,7 @@ export function FlexiMetaStory() {
     <Section id="meta" tone="default" className="relative overflow-hidden">
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,theme(colors.brand.peach/18),transparent_50%)]"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,theme(colors.brand.peach/10),transparent_55%)] pointer-events-none"
       />
       <div ref={sectionRef} className="relative">
         <SectionHeading

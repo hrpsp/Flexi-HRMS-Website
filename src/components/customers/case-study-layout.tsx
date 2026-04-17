@@ -16,7 +16,7 @@ export function CaseStudyLayout({ cs }: { cs: CaseStudyDetail }) {
       <section className="relative overflow-hidden bg-brand-gradient text-white">
         <div
           aria-hidden
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,theme(colors.brand.peach/25),transparent_60%),radial-gradient(ellipse_at_bottom_left,theme(colors.brand.mid/40),transparent_60%)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,theme(colors.brand.peach/15),transparent_60%),radial-gradient(ellipse_at_bottom_left,theme(colors.brand.mid/22),transparent_60%)]"
         />
         <div className="container relative pt-16 pb-16 lg:pt-24 lg:pb-20">
           <nav className="flex items-center gap-1.5 text-xs text-white/60 mb-6">
