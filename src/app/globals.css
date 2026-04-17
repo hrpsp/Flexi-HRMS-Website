@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand tokens surfaced as HSL for shadcn compatibility */
+    --background: 36 27% 96%;        /* #F7F5F2 light */
+    --foreground: 250 28% 14%;       /* #1A1730 ink */
+
+    --card: 0 0% 100%;
+    --card-foreground: 250 28% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 250 28% 14%;
+
+    --primary: 247 30% 25%;          /* #322E53 brand-dark */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 252 24% 35%;        /* #49426E brand-mid */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 36 27% 96%;
+    --muted-foreground: 248 10% 46%; /* #6B6880 brand-gray */
+
+    --accent: 29 72% 76%;            /* #EEC293 peach */
+    --accent-foreground: 247 30% 25%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 248 12% 88%;
+    --input: 248 12% 88%;
+    --ring: 247 30% 25%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 247 30% 12%;
+    --foreground: 36 27% 96%;
+    --card: 247 30% 16%;
+    --card-foreground: 36 27% 96%;
+    --popover: 247 30% 16%;
+    --popover-foreground: 36 27% 96%;
+    --primary: 29 72% 76%;
+    --primary-foreground: 247 30% 12%;
+    --secondary: 252 24% 35%;
+    --secondary-foreground: 36 27% 96%;
+    --muted: 247 20% 22%;
+    --muted-foreground: 248 10% 70%;
+    --accent: 29 72% 76%;
+    --accent-foreground: 247 30% 12%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 247 20% 24%;
+    --input: 247 20% 24%;
+    --ring: 29 72% 76%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply font-sans antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .grain-overlay {
+    position: relative;
+  }
+  .grain-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--tw-bg-grain, url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"));
+    opacity: 0.03;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+}
