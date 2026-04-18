@@ -171,7 +171,7 @@ function SuiteSchematic({ suite }: { suite: SuiteDetail }) {
   const visible = suite.modules.slice(0, 6);
   return (
     <div className="relative">
-      <div className="absolute -inset-6 -z-10 rounded-[32px] bg-gradient-to-br from-brand-peach/20 via-transparent to-brand-mid/10 blur-2xl" />
+      <div className="absolute -inset-6 -z-10 rounded-[32px] bg-gradient-to-br from-brand-peach/8 via-transparent to-brand-mid/6 blur-2xl" />
       <div className="rounded-2xl border border-border bg-card/70 backdrop-blur p-5 shadow-xl">
         <div className="text-[10px] uppercase tracking-[0.18em] text-brand-mid mb-3">Suite map · {suite.name}</div>
         <div className="grid grid-cols-2 gap-2.5">

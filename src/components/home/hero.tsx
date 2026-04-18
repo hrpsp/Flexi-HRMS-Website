@@ -344,7 +344,7 @@ export function Hero() {
       <motion.div
         aria-hidden
         style={reduce || degrade ? undefined : { y: bgY }}
-        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_80%_10%,theme(colors.brand.peach/15),transparent_65%),radial-gradient(ellipse_40%_40%_at_10%_80%,theme(colors.brand.mid/8),transparent_65%)]"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_80%_10%,theme(colors.brand.peach/12),transparent_70%),radial-gradient(ellipse_45%_45%_at_-10%_70%,theme(colors.brand.mid/6),transparent_55%)]"
       />
       <div className="container pt-20 pb-16 lg:pt-28 lg:pb-24">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -380,7 +380,7 @@ export function Hero() {
 
             <motion.p
               variants={subVariants}
-              className="text-lg text-neutral-gray text-pretty max-w-xl"
+              className="text-lg text-neutral-text text-pretty max-w-xl"
             >
               Piece-rate payroll. Budget-day WHT changes. Ramadan shifts. Biometric chaos across three vendors. Flexi HRMS runs the Pakistani enterprise as it actually exists — not as the brochures pretend.
             </motion.p>
@@ -434,7 +434,7 @@ function SplitRealityDemo({
 }) {
   return (
     <div className="relative">
-      <div className="absolute -inset-6 -z-10 rounded-[32px] bg-gradient-to-br from-brand-peach/20 via-transparent to-brand-mid/10 blur-2xl" />
+      <div className="absolute -inset-6 -z-10 rounded-[32px] bg-gradient-to-br from-brand-peach/8 via-transparent to-brand-mid/6 blur-2xl" />
       <div className="grid md:grid-cols-2 gap-4 rounded-2xl border border-border bg-card/70 backdrop-blur p-4 shadow-xl">
         {/* LEFT — "The pitch" */}
         <motion.div
@@ -448,7 +448,7 @@ function SplitRealityDemo({
               <span className="h-1.5 w-1.5 rounded-full bg-neutral-gray/50" />
               The pitch
             </div>
-            <div className="text-[10px] text-neutral-gray/70 italic">what other HRMS products sell</div>
+            <div className="text-[10px] text-neutral-gray italic">what other HRMS products sell</div>
           </div>
           <motion.div
             animate={reduce ? { opacity: 0.78 } : { opacity: [0.65, 0.78, 0.65] }}
@@ -496,7 +496,7 @@ function SplitRealityDemo({
               <span>Next 1:1 · Tuesday 3pm</span>
             </div>
           </motion.div>
-          <div className="mt-2 text-[10px] text-neutral-gray/60 italic text-center">
+          <div className="mt-2 text-[10px] text-neutral-gray italic text-center">
             polished. plausible. not how HR actually runs.
           </div>
         </motion.div>
@@ -509,7 +509,7 @@ function SplitRealityDemo({
           animate="visible"
         >
           <div className="flex items-center justify-between mb-3">
-            <div className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] text-brand-peach font-semibold">
+            <div className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] text-brand-dark font-semibold">
               <span className={`h-1.5 w-1.5 rounded-full bg-brand-peach ${reduce ? "" : "animate-pulse"}`} />
               The reality
             </div>

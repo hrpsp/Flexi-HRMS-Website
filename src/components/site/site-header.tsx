@@ -32,14 +32,14 @@ export function SiteHeader() {
       className={cn(
         "sticky top-0 z-50 w-full transition-[background-color,box-shadow,backdrop-filter,border-color] duration-base ease-flexi-snap",
         scrolled
-          ? "bg-background/80 backdrop-blur-[12px] border-b border-border/60 shadow-[0_2px_12px_rgba(50,46,83,0.04)]"
-          : "bg-transparent border-b border-transparent"
+          ? "bg-background/85 backdrop-blur-[12px] border-b border-border/60 shadow-[0_2px_12px_rgba(50,46,83,0.04)]"
+          : "bg-background/70 backdrop-blur-sm border-b border-transparent"
       )}
     >
       <div
         className={cn(
           "container flex items-center justify-between gap-6 transition-[height] duration-base ease-flexi-snap",
-          scrolled ? "h-16" : "h-20"
+          scrolled ? "h-20" : "h-24"
         )}
       >
         <Logo />

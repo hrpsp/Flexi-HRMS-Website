@@ -3,18 +3,20 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 /**
- * Flexi HRMS logo. Native asset is 1600×933 — we pass those dimensions
- * to next/image for aspect-ratio correctness and control display size
- * via the `className` prop (height + w-auto).
+ * Flexi HRMS logo. Native asset is 1600×933 (aspect ~1.715:1 —
+ * the logo is nearly square because it stacks mark + wordmark,
+ * so heights in the nav are larger than typical wide wordmarks).
  *
  * Variants:
- *   - "dark"  — brand-dark (#322E53) fill SVG, for light backgrounds (nav)
- *   - "light" — light-coloured PNG, for dark backgrounds (footer)
+ *   - "dark"  — brand-dark (#322E53) fill SVG, for light backgrounds
+ *   - "light" — light-coloured PNG, for dark backgrounds
  *
- * Defaults:
- *   - className "h-8 w-auto" → renders ~32px tall (nav-appropriate)
+ * Default: `h-16 w-auto` → ~64px tall / ~110px wide (nav / footer).
+ * Override via `className` for other contexts.
  *
- * For larger display (footer / hero), pass `className="h-10 w-auto"`.
+ * SVG variant is rendered with `unoptimized` so next/image serves it
+ * as-is (vector) instead of rasterising to 1920/3840 — which was
+ * wasteful and produced soft edges at small sizes.
  */
 export function Logo({
   variant = "dark",
@@ -25,10 +27,10 @@ export function Logo({
   className?: string;
   priority?: boolean;
 }) {
-  const src =
-    variant === "light"
-      ? "/brand/flexi-hrms-logo-light.png"
-      : "/brand/flexi-hrms-logo.svg";
+  const isSvg = variant === "dark";
+  const src = isSvg
+    ? "/brand/flexi-hrms-logo.svg"
+    : "/brand/flexi-hrms-logo-light.png";
 
   return (
     <Link href="/" className="inline-flex items-center" aria-label="Flexi HRMS home">
@@ -38,7 +40,9 @@ export function Logo({
         width={1600}
         height={933}
         priority={priority}
-        className={cn("h-8 w-auto", className)}
+        unoptimized={isSvg}
+        sizes="(max-width: 640px) 96px, 120px"
+        className={cn("h-16 w-auto", className)}
       />
     </Link>
   );

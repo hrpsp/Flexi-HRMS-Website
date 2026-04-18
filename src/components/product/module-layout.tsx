@@ -226,7 +226,7 @@ export function ModuleLayout({ mod }: { mod: ModuleDetail }) {
 function ModuleScreenshot({ mod }: { mod: ModuleDetail }) {
   return (
     <div className="relative">
-      <div className="absolute -inset-6 -z-10 rounded-[32px] bg-gradient-to-br from-brand-peach/20 via-transparent to-brand-mid/10 blur-2xl" />
+      <div className="absolute -inset-6 -z-10 rounded-[32px] bg-gradient-to-br from-brand-peach/8 via-transparent to-brand-mid/6 blur-2xl" />
       <div className="rounded-2xl border border-border bg-card/80 backdrop-blur p-5 shadow-xl">
         <div className="flex items-center justify-between mb-4">
           <div className="text-[10px] uppercase tracking-[0.18em] text-brand-mid">{mod.name} · preview</div>

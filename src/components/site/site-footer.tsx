@@ -19,7 +19,7 @@ export function SiteFooter() {
       <div className="container py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8">
           <div className="lg:col-span-4 space-y-5">
-            <Logo variant="light" className="h-10 w-auto" />
+            <Logo variant="light" />
             <p className="text-sm text-white/70 max-w-xs text-pretty">
               Pakistan&apos;s enterprises run on Flexi HRMS. Hire-to-retire, configurable per tenant, compliance-native since 2011.
             </p>

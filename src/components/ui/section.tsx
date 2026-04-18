@@ -61,7 +61,7 @@ export function SectionHeading({
 
 export function TodoBadge({ children = "TODO — confirm with Yousaf" }: { children?: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-warning/40 bg-warning/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-warning">
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-warning/50 bg-warning/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brand-dark">
       <span className="h-1.5 w-1.5 rounded-full bg-warning" />
       {children}
     </span>
